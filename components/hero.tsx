@@ -1,23 +1,30 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { ArrowDown, Github, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site-config";
 
 function AnimatedCounter({
   target,
   suffix,
+  reduceMotion,
 }: {
   target: number;
   suffix: string;
+  reduceMotion: boolean;
 }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView) {
+      return;
+    }
+    if (reduceMotion) return;
+
     let start: number | null = null;
     const duration = 2000;
     const step = (ts: number) => {
@@ -27,7 +34,9 @@ function AnimatedCounter({
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
-  }, [isInView, target]);
+  }, [isInView, reduceMotion, target]);
+
+  const displayCount = reduceMotion && isInView ? target : count;
 
   return (
     <div className="flex flex-col items-center gap-1">
@@ -35,7 +44,7 @@ function AnimatedCounter({
         ref={ref}
         className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
       >
-        {count}
+        {displayCount}
         {suffix.match(/^\+/) ? "+" : ""}
       </span>
       <span className="text-sm text-zinc-500">
@@ -46,6 +55,10 @@ function AnimatedCounter({
 }
 
 export function Hero() {
+  const prefersReducedMotion = useReducedMotion();
+  const [firstName, ...restNameParts] = siteConfig.name.split(" ");
+  const restName = restNameParts.join(" ");
+
   return (
     <section
       id="hero"
@@ -86,8 +99,8 @@ export function Hero() {
             ease: [0.25, 0.4, 0.25, 1],
           }}
         >
-          Ivan{" "}
-          <span className="gradient-text">Chen</span>
+          {firstName}{" "}
+          <span className="gradient-text">{restName}</span>
         </motion.h1>
 
         <motion.p
@@ -96,7 +109,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Computer Science & Finance @ Syracuse University
+          {siteConfig.headline}
         </motion.p>
 
         <motion.p
@@ -115,11 +128,16 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <AnimatedCounter target={8} suffix="+ Projects" />
-          <div className="h-8 w-px bg-white/10" />
-          <AnimatedCounter target={3} suffix="+ Internships" />
-          <div className="h-8 w-px bg-white/10" />
-          <AnimatedCounter target={100} suffix="+ AI Calls Automated" />
+          {siteConfig.heroStats.map((stat, idx) => (
+            <div key={stat.suffix} className="contents">
+              {idx > 0 && <div className="h-8 w-px bg-white/10" />}
+              <AnimatedCounter
+                target={stat.target}
+                suffix={stat.suffix}
+                reduceMotion={Boolean(prefersReducedMotion)}
+              />
+            </div>
+          ))}
         </motion.div>
 
         {/* CTA buttons */}
@@ -141,7 +159,7 @@ export function Hero() {
             className="h-11 rounded-lg border-white/10 bg-white/5 text-zinc-300 hover:bg-white/10 hover:text-white"
           >
             <a
-              href="https://github.com/ichen27"
+              href={siteConfig.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -165,8 +183,16 @@ export function Hero() {
       {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        animate={
+          prefersReducedMotion
+            ? undefined
+            : { y: [0, 8, 0] }
+        }
+        transition={
+          prefersReducedMotion
+            ? undefined
+            : { duration: 2, repeat: Infinity, ease: "easeInOut" }
+        }
       >
         <ArrowDown className="size-5 text-zinc-600" />
       </motion.div>

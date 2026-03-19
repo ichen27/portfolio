@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, PhoneOff, Bot, User } from "lucide-react";
+import { Phone, PhoneOff, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface Message {
@@ -38,7 +38,7 @@ const orderItems: OrderItem[] = [
 
 const orderRevealIndex = [3, 5, 5]; // message index when each item appears
 
-export function FarEastDemo({ onClose }: { onClose: () => void }) {
+export function FarEastDemo() {
   const [callState, setCallState] = useState<"idle" | "ringing" | "active" | "ended">("idle");
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);

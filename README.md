@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ivan Chen Portfolio
 
-## Getting Started
+A single-page portfolio built with Next.js 16, React 19, Tailwind CSS v4, Framer Motion, and shadcn/ui.
 
-First, run the development server:
+## Stack
+- Next.js 16 (App Router)
+- React 19 + TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- shadcn/ui components
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Local Development
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start development server (port 3001):
+   ```bash
+   npm run dev
+   ```
+3. Open `http://localhost:3001`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quality Checks
+- Lint: `npm run lint`
+- Typecheck: `npx tsc --noEmit`
+- Build: `npm run build`
+- Governance validation: `node scripts/validate-governance.mjs`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Governance Workflow
+This repo uses a markdown-first workflow for agent and human collaboration.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `BACKLOG.md`: source of truth for work items and status.
+- `REQUESTS.md`: blockers, tradeoffs, and human-input requests.
+- `DECISIONS.md`: ADR log.
+- `CHANGELOG.md`: release/change history.
+- `AGENTS.md`: operating guide and command reference.
 
-## Learn More
+Only items marked `Status: READY` and `Approval: APPROVED` should be implemented.
 
-To learn more about Next.js, take a look at the following resources:
+## CI/CD
+GitHub Actions workflow: `.github/workflows/ci.yml`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pipeline stages:
+- Changes detection (docs-only vs code)
+- Governance policy validation
+- Quality checks (lint, typecheck, build)
+- Vercel deploy on `main`
+- Required merge gate: `ci / merge-gate`

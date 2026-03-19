@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDown, Briefcase } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 interface Experience {
   company: string;

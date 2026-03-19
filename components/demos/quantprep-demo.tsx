@@ -36,7 +36,7 @@ const topics = [
   { name: "Trees", count: 6, color: "text-purple-400" },
 ];
 
-export function QuantPrepDemo({ onClose }: { onClose: () => void }) {
+export function QuantPrepDemo() {
   const [activeTab, setActiveTab] = useState<"problem" | "topics">("problem");
 
   return (
