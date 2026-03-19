@@ -76,7 +76,7 @@ const strategies = {
 
 type StrategyKey = keyof typeof strategies;
 
-export function KalshiDemo({ onClose }: { onClose: () => void }) {
+export function KalshiDemo() {
   const [activeStrategy, setActiveStrategy] = useState<StrategyKey>("volatility");
   const strat = strategies[activeStrategy];
   const Icon = strat.icon;

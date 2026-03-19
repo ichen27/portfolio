@@ -42,7 +42,7 @@ const metrics = [
   { label: "Max Drawdown", value: "-4.2%", trend: "down" },
 ];
 
-export function AlpacaDemo({ onClose }: { onClose: () => void }) {
+export function AlpacaDemo() {
   const portfolioReturn = (
     ((portfolioData[portfolioData.length - 1].value - portfolioData[0].value) /
       portfolioData[0].value) *

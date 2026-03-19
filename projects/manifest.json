@@ -1,0 +1,171 @@
+[
+  {
+    "id": "far-east-call-agent",
+    "title": "Far East Call Agent",
+    "description": "Twilio + OpenAI voice ordering agent with restaurant-specific guardrails, test scenarios, and latency/compliance measurement tooling.",
+    "tech": ["TypeScript", "OpenAI Realtime", "Twilio", "Node.js"],
+    "stats": [
+      { "label": "test scenarios", "value": "10" },
+      { "label": "calls/month", "value": "100+" }
+    ],
+    "github": "https://github.com/ichen27/far-east-call-agent",
+    "repoPath": "projects/far-east-call-agent",
+    "featured": true,
+    "demoKey": "fareast",
+    "mvpTier": "tier1",
+    "demoMode": "mock",
+    "localRunCommand": "cd projects/far-east-call-agent/vercel-server && npm run dev",
+    "mockRunCommand": "cd projects/far-east-call-agent && python -m voice-agent-tester.src.main --mode test --calls 2",
+    "healthCheck": "http://localhost:8000/",
+    "evidencePaths": [
+      "projects/far-east-call-agent/voice-agent-tester/test-report-human-readable.md",
+      "projects/far-east-call-agent/test_results"
+    ],
+    "portfolioCardCopy": "AI phone ordering system with measurable compliance and latency testing."
+  },
+  {
+    "id": "kalshi-trading",
+    "title": "Kalshi Trading System",
+    "description": "Modular prediction-market execution engine with strategy allocation, dashboard server, and streaming market telemetry.",
+    "tech": ["TypeScript", "Kalshi API", "WebSocket", "Node.js"],
+    "stats": [
+      { "label": "active strategies", "value": "3" },
+      { "label": "transport", "value": "REST + WS" }
+    ],
+    "github": "https://github.com/ichen27/kalshi-trading",
+    "repoPath": "projects/kalshi-trading",
+    "featured": true,
+    "demoKey": "kalshi",
+    "mvpTier": "tier1",
+    "demoMode": "mock",
+    "localRunCommand": "cd projects/kalshi-trading && npm run dev",
+    "mockRunCommand": "cd projects/kalshi-trading && npm run dev",
+    "healthCheck": "http://localhost:3456/api/strategies",
+    "evidencePaths": [
+      "projects/kalshi-trading/src/index.ts",
+      "projects/kalshi-trading/src/server.ts",
+      "projects/kalshi-trading/strategies.json"
+    ],
+    "portfolioCardCopy": "Prediction-market trading stack with live telemetry and strategy-level capital controls."
+  },
+  {
+    "id": "alpaca-trading",
+    "title": "Alpaca Trading Platform",
+    "description": "Next.js trading dashboard integrating portfolio sleeves, account controls, and brokerage operations with Prisma-backed state.",
+    "tech": ["TypeScript", "Next.js", "Prisma", "Alpaca API"],
+    "stats": [
+      { "label": "app stack", "value": "Next.js 16" },
+      { "label": "database", "value": "Prisma" }
+    ],
+    "github": "https://github.com/ichen27/alpaca-trading",
+    "repoPath": "projects/alpaca-trading",
+    "featured": true,
+    "demoKey": "alpaca",
+    "mvpTier": "tier1",
+    "demoMode": "mock",
+    "localRunCommand": "cd projects/alpaca-trading && npm run dev",
+    "mockRunCommand": "cd projects/alpaca-trading && npm run dev",
+    "healthCheck": "http://localhost:3000/",
+    "evidencePaths": [
+      "projects/alpaca-trading/__tests__",
+      "projects/alpaca-trading/src/app"
+    ],
+    "portfolioCardCopy": "Web trading cockpit for strategy sleeves and portfolio-level risk operations."
+  },
+  {
+    "id": "openclaw-dashboard",
+    "title": "OpenClaw Dashboard",
+    "description": "Productivity and agent operations dashboard with task systems, analytics views, and Prisma-backed data flows.",
+    "tech": ["TypeScript", "Next.js", "Prisma", "shadcn/ui"],
+    "stats": [
+      { "label": "routes", "value": "10+" },
+      { "label": "db", "value": "Prisma" }
+    ],
+    "github": "https://github.com/ichen27/openclaw-dashboard",
+    "repoPath": "projects/openclaw-dashboard",
+    "featured": true,
+    "demoKey": "openclaw",
+    "mvpTier": "tier1",
+    "demoMode": "unavailable",
+    "localRunCommand": "cd projects/openclaw-dashboard && npm run dev",
+    "mockRunCommand": "cd projects/openclaw-dashboard && npm run dev",
+    "healthCheck": "n/a",
+    "evidencePaths": [
+      "projects/openclaw-dashboard/src/app",
+      "projects/openclaw-dashboard/prisma/seed.ts"
+    ],
+    "portfolioCardCopy": "Operations dashboard for planning, analytics, and personal agent workflows."
+  },
+  {
+    "id": "talkmeup-features",
+    "title": "TalkMeUp Feature Suite",
+    "description": "Python feature experiments for narration, FAQ/chatbot workflows, and reusable shared utilities.",
+    "tech": ["Python", "NLP", "Data Processing"],
+    "stats": [
+      { "label": "modules", "value": "3" },
+      { "label": "mode", "value": "R&D" }
+    ],
+    "github": null,
+    "repoPath": "projects/talkmeup_features-main",
+    "featured": false,
+    "demoKey": "talkmeup",
+    "mvpTier": "tier2",
+    "demoMode": "unavailable",
+    "localRunCommand": "cd projects/talkmeup_features-main && bash setup.sh",
+    "mockRunCommand": "cd projects/talkmeup_features-main && python -m faq_chatbot.main",
+    "healthCheck": "n/a",
+    "evidencePaths": [
+      "projects/talkmeup_features-main/faq_chatbot",
+      "projects/talkmeup_features-main/data_narration"
+    ],
+    "portfolioCardCopy": "Applied AI feature prototypes spanning narration and FAQ assistant workflows."
+  },
+  {
+    "id": "temporal-crime-prediction",
+    "title": "Temporal Crime Prediction",
+    "description": "Random Forest classifier predicting likely crime categories from temporal features extracted from Syracuse incident data.",
+    "tech": ["Python", "scikit-learn", "pandas", "SQLite"],
+    "stats": [
+      { "label": "records", "value": "40K+" },
+      { "label": "model", "value": "Random Forest" }
+    ],
+    "github": "https://github.com/ichen27/Temporal-Crime-Prediction-Classification-Model-w-Random-Forest-",
+    "repoPath": "projects/Temporal-Crime-Prediction-Classification-Model-w-Random-Forest-",
+    "featured": false,
+    "demoKey": "temporal-crime",
+    "mvpTier": "tier2",
+    "demoMode": "unavailable",
+    "localRunCommand": "cd projects/Temporal-Crime-Prediction-Classification-Model-w-Random-Forest- && python main.py",
+    "mockRunCommand": "cd projects/Temporal-Crime-Prediction-Classification-Model-w-Random-Forest- && python main.py",
+    "healthCheck": "n/a",
+    "evidencePaths": [
+      "projects/Temporal-Crime-Prediction-Classification-Model-w-Random-Forest-/crime-prediction.py",
+      "projects/Temporal-Crime-Prediction-Classification-Model-w-Random-Forest-/data_formater.py"
+    ],
+    "portfolioCardCopy": "Temporal ML classifier for forecasting likely incident categories by date."
+  },
+  {
+    "id": "syracuse-crime-analysis",
+    "title": "Syracuse Crime Data Analysis",
+    "description": "Exploratory analytics and visualizations over Syracuse crime data with reusable scripts and SQLite-backed datasets.",
+    "tech": ["Python", "Matplotlib", "Jupyter", "SQLite"],
+    "stats": [
+      { "label": "dataset", "value": "2020-2024" },
+      { "label": "analysis", "value": "EDA" }
+    ],
+    "github": "https://github.com/ichen27/Syracuse-Crime-Data-Analysis",
+    "repoPath": "projects/Syracuse-Crime-Data-Analysis",
+    "featured": false,
+    "demoKey": "syracuse-crime",
+    "mvpTier": "tier2",
+    "demoMode": "unavailable",
+    "localRunCommand": "cd projects/Syracuse-Crime-Data-Analysis && python main.py",
+    "mockRunCommand": "cd projects/Syracuse-Crime-Data-Analysis && python main.py",
+    "healthCheck": "n/a",
+    "evidencePaths": [
+      "projects/Syracuse-Crime-Data-Analysis/analysis.ipynb",
+      "projects/Syracuse-Crime-Data-Analysis/main.py"
+    ],
+    "portfolioCardCopy": "Crime trend analysis pipeline with reusable scripts and chart generation."
+  }
+]

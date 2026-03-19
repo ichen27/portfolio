@@ -3,37 +3,7 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Github, ArrowUpRight } from "lucide-react";
-
-interface Project {
-  title: string;
-  description: string;
-  tech: string[];
-  github: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "Temporal Crime Prediction",
-    description:
-      "Random Forest classifier built for Syracuse PD to predict temporal crime patterns using historical data analysis and feature engineering.",
-    tech: ["Python", "scikit-learn", "Random Forest"],
-    github: "https://github.com/ichen27/crime-prediction",
-  },
-  {
-    title: "Syracuse Crime Analysis",
-    description:
-      "Comprehensive data visualization and statistical analysis of crime patterns across Syracuse, NY with interactive mapping and trend analysis.",
-    tech: ["Python", "Jupyter", "Matplotlib"],
-    github: "https://github.com/ichen27/syracuse-crime",
-  },
-  {
-    title: "Internet Bubble Analysis",
-    description:
-      "Financial data analysis examining the dot-com bubble through quantitative metrics, market indicators, and historical price data.",
-    tech: ["Python", "Pandas", "Financial Analysis"],
-    github: "https://github.com/ichen27/internet-bubble",
-  },
-];
+import { otherProjects } from "@/lib/projects";
 
 export function OtherProjects() {
   return (
@@ -62,12 +32,9 @@ export function OtherProjects() {
         </motion.h2>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <motion.a
-              key={project.title}
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
+          {otherProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -85,6 +52,7 @@ export function OtherProjects() {
               <p className="mb-4 flex-1 text-sm leading-relaxed text-zinc-500">
                 {project.description}
               </p>
+              <p className="mb-4 text-xs text-zinc-600">{project.repoPath}</p>
 
               <div className="flex flex-wrap gap-1.5">
                 {project.tech.map((t) => (
@@ -97,7 +65,18 @@ export function OtherProjects() {
                   </Badge>
                 ))}
               </div>
-            </motion.a>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-1 text-xs text-zinc-400 transition-colors hover:text-white"
+                >
+                  Source
+                  <ArrowUpRight className="size-3" />
+                </a>
+              )}
+            </motion.div>
           ))}
         </div>
       </div>

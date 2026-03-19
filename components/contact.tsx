@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Github, Mail, Phone, Send, ArrowUpRight } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -55,7 +56,7 @@ export function Contact() {
             className="space-y-4"
           >
             <a
-              href="mailto:ivanzhchen@gmail.com"
+              href={`mailto:${siteConfig.email}`}
               className="glass-card flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-white/[0.06]"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-500/10">
@@ -64,14 +65,14 @@ export function Contact() {
               <div>
                 <p className="text-sm text-zinc-500">Email</p>
                 <p className="text-sm font-medium text-white">
-                  ivanzhchen@gmail.com
+                  {siteConfig.email}
                 </p>
               </div>
               <ArrowUpRight className="ml-auto size-4 text-zinc-600" />
             </a>
 
             <a
-              href="tel:+16466393128"
+              href={`tel:${siteConfig.phoneE164}`}
               className="glass-card flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-white/[0.06]"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/10">
@@ -80,14 +81,14 @@ export function Contact() {
               <div>
                 <p className="text-sm text-zinc-500">Phone</p>
                 <p className="text-sm font-medium text-white">
-                  (646) 639-3128
+                  {siteConfig.phoneDisplay}
                 </p>
               </div>
               <ArrowUpRight className="ml-auto size-4 text-zinc-600" />
             </a>
 
             <a
-              href="https://github.com/ichen27"
+              href={siteConfig.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="glass-card flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-white/[0.06]"
@@ -98,7 +99,7 @@ export function Contact() {
               <div>
                 <p className="text-sm text-zinc-500">GitHub</p>
                 <p className="text-sm font-medium text-white">
-                  github.com/ichen27
+                  {siteConfig.githubUrl.replace(/^https?:\/\//, "")}
                 </p>
               </div>
               <ArrowUpRight className="ml-auto size-4 text-zinc-600" />

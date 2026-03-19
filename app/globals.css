@@ -48,6 +48,8 @@
 }
 
 :root {
+  --font-geist-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -118,6 +120,76 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 100;
+  transform: translateY(-220%);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #111111;
+  color: #fafafa;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+  pointer-events: auto;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#main-content:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: -2px;
+}
+
+#main-content:target {
+  outline: 2px solid rgba(139, 92, 246, 0.75);
+  outline-offset: -2px;
+}
+
+#main-content[data-skip-target-active="true"] {
+  outline: 2px solid rgba(139, 92, 246, 0.75);
+  outline-offset: -2px;
+}
+
+#main-content {
+  scroll-margin-top: 4rem;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .skip-link {
+    transition: none;
+  }
 }
 
 @layer base {

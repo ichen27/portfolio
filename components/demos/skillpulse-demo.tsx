@@ -39,7 +39,7 @@ const pipelineSteps = [
   },
 ];
 
-export function SkillPulseDemo({ onClose }: { onClose: () => void }) {
+export function SkillPulseDemo() {
   const [activeStep, setActiveStep] = useState(-1);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -60,7 +60,6 @@ export function SkillPulseDemo({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     const timer = setTimeout(runAnimation, 500);
     return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
