@@ -476,3 +476,5 @@ export const cloudflare: Work[] = [
 export const allWork = [...work, ...cloudflare];
 
 export const researchWork = ["handshake-benchmarks", "decision-models", "cad-kernel", "spatial-capture", "vision-training"].map(slug => work.find(item => item.slug === slug)!);
+
+export const developmentWork = ["launcher", "cad-application", "messaging"].map(slug => work.find(item => item.slug === slug)!);

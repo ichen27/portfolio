@@ -22,7 +22,7 @@ for (const file of htmlFiles) {
   }
 }
 const home=fs.readFileSync(path.join(root,"index.html"),"utf8");
-assert(home.includes("Ivan Chen") && home.includes("Research &amp; experiments"));
+assert(home.includes("Ivan Chen") && home.includes('id="research"'));
 assert(!home.includes("Available for Summer 2026"), "Stale availability must be removed");
 assert.equal(fs.readFileSync("public/artifacts/chess-training.csv","utf8").trim().split("\n").length,62);
 assert(fs.statSync("public/resume.pdf").size > 10000);

@@ -35,3 +35,7 @@ production build and static export checks passed. Browser checks: 1280px desktop
 390px mobile and 320px narrow viewport, no horizontal overflow or broken images.
 Tab reaches the skip link. Both chart images, evidence table and artifact links render.
 Screenshots: docs/media/handshake-desktop.png and handshake-mobile.png.
+
+## Section navigation and personal copy — October 13, 2026
+
+Reviewed the focused diff: dedicated sections, metadata, selected development entries and section-aware breadcrumbs. Existing /#work anchor retained for compatibility. No actionable findings. Lint (zero errors, eight pre-existing warnings), typecheck, build and export checks passed. Browser inspection at 1280/390/320px confirms five research entries, three development entries, About me golf copy, valid navigation targets, no horizontal overflow or broken images. Launcher breadcrumb returns to Development. Screenshots: docs/media/sections-desktop.png and sections-mobile.png.

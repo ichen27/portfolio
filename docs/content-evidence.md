@@ -40,3 +40,7 @@ Read-only attempts to re-read the 17 source PRs with the current gh identity
 returned repository-not-found. This publication therefore cites archived records,
 not live acceptance or current remote state. Public hashes preserve provenance
 but do not make the private source documents independently reproducible.
+
+## Portfolio sections — October 13, 2026
+
+User requested dedicated Research, Development and About me sections. Existing five research studies retain their evidence. Development lists the launcher/MCP hub, CAD application and messaging harness, preserving documented maturity labels. Cloudflare work stays linked from experience. The personal copy is directly user-supplied: loves golf, began in 2024, reached a 15 handicap two years later. No extra hobbies or personal claims were inferred from private notes.

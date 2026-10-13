@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { researchWork } from "@/lib/work";
+import { researchWork, developmentWork } from "@/lib/work";
 
 const experience = [
   ["Cloudflare", "Product Manager", "May–Aug 2026", "Internal analytics and forecasting tools for Professional Services."],
@@ -14,15 +14,16 @@ export default function Home() {
   return (
     <main id="main" className="home">
       <header className="intro">
-        <nav aria-label="On this page"><a href="#work">Research</a><a href="#experience">Experience</a><a href="mailto:ivanzhchen@gmail.com">Email ↗</a></nav>
+        <nav aria-label="On this page"><a href="#research">Research</a><a href="#development">Development</a><a href="#experience">Experience</a><a href="#about">About me</a></nav>
         <h1>Ivan Chen</h1>
         <p className="lede">Computer science at Syracuse University.</p>
-        <p>I’m interested in how agents make decisions, how their behavior can be evaluated, how geometry can be verified, and how images become 3D representations. These are notes from my experiments: the questions, the methods, and what the results actually show.</p>
+        <p>I’m interested in how agents make decisions, how their behavior can be evaluated, how geometry can be verified, and how images become 3D representations. Here are the experiments I’m running and the systems I’m building, with notes on the methods, results, and work still ahead.</p>
         <div className="contact"><a href="mailto:ivanzhchen@gmail.com">Email</a><a href="https://github.com/ichen27">GitHub</a><a href="https://www.linkedin.com/in/ivanzhchen/">LinkedIn</a><a href="/resume.pdf">Résumé ↗</a></div>
       </header>
 
-      <section id="work" aria-labelledby="work-heading">
-        <div className="section-heading"><h2 id="work-heading">Research & experiments</h2><span>Methods, results, and open questions.</span></div>
+      <section id="research" aria-labelledby="work-heading">
+        <span id="work" aria-hidden="true" />
+        <div className="section-heading"><h2 id="work-heading">Research</h2><span>Methods, results, and open questions.</span></div>
         <div className="research-list">
           {researchWork.map(item => (
             <article className="research-row" key={item.slug}>
@@ -42,6 +43,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="development" aria-labelledby="development-heading">
+        <div className="section-heading"><h2 id="development-heading">Development</h2><span>Systems I’m building.</span></div>
+        <div className="development-list">
+          {developmentWork.map(item => (
+            <article className="development-row" key={item.slug}>
+              <div>
+                <p className="work-meta">{item.area} · {item.status}</p>
+                <h3><Link href={`/work/${item.slug}/`}>{item.title}</Link></h3>
+              </div>
+              <div>
+                <p>{item.summary}</p>
+                <Link className="read-link" href={`/work/${item.slug}/`}>Project notes →<span className="sr-only"> for {item.title}</span></Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="experience" aria-labelledby="experience-heading">
         <div className="section-heading"><h2 id="experience-heading">Experience</h2></div>
         <div className="experience-list">
@@ -54,6 +73,10 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+      <section id="about" aria-labelledby="about-heading" className="about">
+        <div className="section-heading"><h2 id="about-heading">About me</h2><span>Away from work and school.</span></div>
+        <p>I love to golf. I picked up the game in 2024 and reached a 15 handicap two years later.</p>
       </section>
       <footer><span>Ivan Chen</span><span>October 2026</span><a href="mailto:ivanzhchen@gmail.com">Get in touch ↗</a></footer>
     </main>
