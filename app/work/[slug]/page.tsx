@@ -38,6 +38,11 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         </div>
         <a className="data-link" href={item.evidence.download}>Download the recorded data ↗</a>
       </section>}
+      {item.additionalFigures?.map(figure => <figure key={figure.src}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <a href={figure.src} aria-label="Open full-resolution figure"><img src={figure.src} alt={figure.alt} width={figure.width} height={figure.height} /></a>
+        <figcaption>{figure.caption}</figcaption>
+      </figure>)}
       {item.flow && <figure className="flow-figure"><ol className="flow">{item.flow.map(step => <li key={step}>{step}</li>)}</ol><figcaption>{item.status === "Design in progress" ? "Proposed workflow." : "A simplified view of the workflow described below."}</figcaption></figure>}
       <div className="prose">{item.sections.map(section => <section key={section.title}><h2>{section.title}</h2><p>{section.text}</p></section>)}</div>
       {item.links && <section className="sources"><h2>Methods & artifacts</h2><ul>{item.links.map(link => <li key={link.href}><a href={link.href}>{link.label} ↗</a></li>)}</ul></section>}

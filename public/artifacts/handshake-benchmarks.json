@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-13",
+  "source_type": "Archived official five-trial results recorded in private delivery summaries",
+  "selection": "All complete five-trial delivery records in the inspected context directory; not all authored tasks.",
+  "excluded_incomplete_records": 1,
+  "unit": "One final recorded five-trial evaluation per task; anonymous task IDs are not trial order.",
+  "limitations": [
+    "Historical record snapshot, not a fresh benchmark run or live acceptance audit.",
+    "Deliberately difficult tasks selected and revised during benchmark development.",
+    "Not solved includes recorded valid failures and timeouts; it does not mean semantic failure in every trial.",
+    "Per-model identities, versions and budgets are not normalized across these records.",
+    "Counts are observed solved trials, not the probability-of-at-least-one-success pass@k estimator.",
+    "Source documents remain private. Hashes provide provenance, not independent public verification."
+  ],
+  "tasks": 17,
+  "attempts": 85,
+  "solved": 7,
+  "not_solved": 78,
+  "rows": [
+    {
+      "task": "T01",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "8d3168555cdeb4883d22fb9b5681d3c0b4cd06ff03ecf67aa2ac967005db6282"
+    },
+    {
+      "task": "T02",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "c0ff7ee880cf73d2d3a93c71f833b082bbc0d1a97afb54fb528e4871c51e457d"
+    },
+    {
+      "task": "T03",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "e65d73507617e92adb654a2f7546360eee1c20f804d810b24aed2a3ace803e10"
+    },
+    {
+      "task": "T04",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "e9f42d0d0c142763e578c148ab1a76383d9b13c9ab0c730a09c800c1388d07c9"
+    },
+    {
+      "task": "T05",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "a9ed665e83a47c76ee11cc8035cd1014210165031cf16aadf03cb3d680ab0ccb"
+    },
+    {
+      "task": "T06",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "35d8ed50882ade3ebdddaafd99328a920c313f4cb1535eb542c50e56beb9ccd8"
+    },
+    {
+      "task": "T07",
+      "attempts": 5,
+      "solved": 2,
+      "not_solved": 3,
+      "source_sha256": "11307243d84c341fdb1e4f9355f386269a55c54941ccceef658bb9dd985ecd58"
+    },
+    {
+      "task": "T08",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "318cd05280d5faf6d37e21c72ad7af5af551cbfc525cda4ac842f935a4755aac"
+    },
+    {
+      "task": "T09",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "b424d06888c7ba4c8dcf9df40347a74f06d37c21c8e0a0a841b828f579922df4"
+    },
+    {
+      "task": "T10",
+      "attempts": 5,
+      "solved": 1,
+      "not_solved": 4,
+      "source_sha256": "3aa026156861c0503bc84bd0cd85be7e83f4f3ba59667dd7d91728e827fb9759"
+    },
+    {
+      "task": "T11",
+      "attempts": 5,
+      "solved": 2,
+      "not_solved": 3,
+      "source_sha256": "cf78a46f8103e6ecf3def75d91c9a94d10ebed6ae35805919feebd682497e7b6"
+    },
+    {
+      "task": "T12",
+      "attempts": 5,
+      "solved": 2,
+      "not_solved": 3,
+      "source_sha256": "6fbfb9ee37ae7d897cf52177e6bc767a038a18a16a30b6f6c267c4c4542667a2"
+    },
+    {
+      "task": "T13",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "370cae7647d4991b3597f7728e843ab432ec5dfc00bfbe7d939e8f822dc49975"
+    },
+    {
+      "task": "T14",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "86f07bc28093d5cc122a83e8a21d72314037dab4c9d861c3b110f43de9e3a69f"
+    },
+    {
+      "task": "T15",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "f2e1ded8cbd6fb20dc3bea1a3dd2305d43452c24d53225fad98b9de7359e9601"
+    },
+    {
+      "task": "T16",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "f7ca799138525aced4d9d8b2ff024c49077aa7f7b9b322540dc3edaa333205ad"
+    },
+    {
+      "task": "T17",
+      "attempts": 5,
+      "solved": 0,
+      "not_solved": 5,
+      "source_sha256": "e0c2ac876248a48fee8e8bfc7e6e0dbabf89557cfcfb224e53f7a65bbbd15b9c"
+    }
+  ]
+}

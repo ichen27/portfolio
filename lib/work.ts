@@ -3,12 +3,120 @@ export type Work = {
   question: string; sections: { title: string; text: string }[];
   links?: { label: string; href: string }[];
   image?: { src: string; width: number; height: number; alt: string; caption: string };
+  additionalFigures?: NonNullable<Work["image"]>[];
   flow?: string[];
   finding?: string;
   evidence?: { label: string; summary: string; headers: string[]; rows: string[][]; download: string };
 };
 
 export const work: Work[] = [
+{
+  "slug": "handshake-benchmarks",
+  "title": "Building benchmarks for coding agents",
+  "area": "Agent evaluation · Handshake AI",
+  "status": "Archived evaluation results",
+  "summary": "Designing reproducible coding tasks, reference solutions, and verifiers—and investigating why agents fail.",
+  "question": "How do you tell a difficult coding task from a broken evaluation?",
+  "finding": "Across 17 completed task records, agents solved 7 of 85 official attempts. Thirteen tasks had no solves in their five-trial evaluation.",
+  "image": {
+    "src": "/artifacts/handshake-distribution.svg",
+    "width": 900,
+    "height": 520,
+    "alt": "Task distribution: 13 tasks had zero solved trials, one had one solve, three had two solves, and none had three to five solves.",
+    "caption": "Figure 1. Observed solves per task in an archived sample of official five-trial evaluations. The sample contains deliberately difficult tasks from benchmark development, not a representative test of general coding ability."
+  },
+  "additionalFigures": [
+    {
+      "src": "/artifacts/handshake-tasks.svg",
+      "width": 900,
+      "height": 780,
+      "alt": "Seventeen anonymized task results, each with five attempts. T07, T11 and T12 had two solves; T10 had one. The other thirteen tasks had zero solves.",
+      "caption": "Figure 2. All 17 tasks in the exported sample. Green counts solved attempts; gray counts attempts not solved, including timeouts. IDs correspond to the downloadable data and do not imply execution order."
+    }
+  ],
+  "evidence": {
+    "label": "Recorded evaluation results",
+    "summary": "Snapshot assembled October 13, 2026 from archived delivery records. One completed five-trial result per task; one incomplete record excluded.",
+    "headers": [
+      "Measure",
+      "Result"
+    ],
+    "rows": [
+      [
+        "Completed task records",
+        "17"
+      ],
+      [
+        "Official trial attempts",
+        "85"
+      ],
+      [
+        "Solved attempts",
+        "7"
+      ],
+      [
+        "Attempts not solved",
+        "78, including timeouts"
+      ],
+      [
+        "Tasks with 0 / 1 / 2 solves",
+        "13 / 1 / 3"
+      ],
+      [
+        "Tasks with 3–5 solves",
+        "0"
+      ]
+    ],
+    "download": "/artifacts/handshake-benchmarks.json"
+  },
+  "flow": [
+    "Task & environment",
+    "Reference / no-op checks",
+    "Verifier review",
+    "Agent trials",
+    "Failure analysis"
+  ],
+  "sections": [
+    {
+      "title": "The work",
+      "text": "At Handshake AI, I build and evaluate coding-agent benchmarks. For Project Dynamo, that means turning realistic technical problems into reproducible tasks: a containerized environment, a clear output contract, a reference solution, and a verifier that can distinguish a correct result from a plausible one. The research question is whether a failed attempt reveals a limitation in the agent or a defect in the evaluation."
+    },
+    {
+      "title": "Checking the measuring instrument",
+      "text": "A reference solution should pass in the same environment used for evaluation. A no-op baseline should fail. Those checks establish basic calibration, but do not establish that a task is fair or that a verifier is complete. I also review the correspondence between instructions and tests, check whether incorrect candidates can pass, and investigate whether failures come from task semantics, ambiguous requirements, the verifier, or infrastructure."
+    },
+    {
+      "title": "What the charts measure",
+      "text": "The figures include every completed delivery record with a five-trial official result in the inspected archive: 17 records, with one incomplete record excluded. Each row contributes five attempts from its final recorded evaluation. The histogram counts tasks by observed solves: 13 at zero, one at one, and three at two. These are direct trial counts, not a pass@k probability estimate. The archive is a subset of my benchmark work, not a count of every task I have delivered."
+    },
+    {
+      "title": "Interpreting a failed attempt",
+      "text": "The 78 attempts not solved should not all be called reasoning failures. The records include timeouts, and one record classified as a valid failure also notes a near-limit timeout. I preserve the observed solved/not-solved distinction here rather than turning every unsuccessful run into evidence of a semantic limitation. During development, a suspicious failure sends the task back through diagnosis and validation."
+    },
+    {
+      "title": "Limits and provenance",
+      "text": "These tasks were deliberately selected and revised to challenge agents. The results therefore describe this development sample; they do not establish a general coding success rate, compare models under equal budgets, or isolate the effect of an agent harness. This is an archived-results snapshot rather than a fresh benchmark run or a current acceptance audit. Public artifacts contain anonymous outcome counts and source-document hashes; task prompts, hidden tests, solutions, and private repository links remain outside the export. The private source records cannot be independently verified from this page alone."
+    }
+  ],
+  "links": [
+    {
+      "label": "Anonymized results (CSV)",
+      "href": "/artifacts/handshake-benchmarks.csv"
+    },
+    {
+      "label": "Task distribution figure (SVG)",
+      "href": "/artifacts/handshake-distribution.svg"
+    },
+    {
+      "label": "Per-task outcomes figure (SVG)",
+      "href": "/artifacts/handshake-tasks.svg"
+    },
+    {
+      "label": "Agent harness research questions",
+      "href": "/work/agent-harnesses/"
+    }
+  ]
+},
   {
     "slug": "agent-harnesses",
     "title": "Agent harness research",
@@ -31,6 +139,7 @@ export const work: Work[] = [
       }
     ],
     "links": [
+      {"label": "Handshake AI: benchmark methods and archived trial results", "href": "/work/handshake-benchmarks/"},
       {
         "label": "Decision-model study: method, event trace and results",
         "href": "/work/decision-models/"
@@ -366,4 +475,4 @@ export const cloudflare: Work[] = [
 ];
 export const allWork = [...work, ...cloudflare];
 
-export const researchWork = ["decision-models", "cad-kernel", "spatial-capture", "vision-training"].map(slug => work.find(item => item.slug === slug)!);
+export const researchWork = ["handshake-benchmarks", "decision-models", "cad-kernel", "spatial-capture", "vision-training"].map(slug => work.find(item => item.slug === slug)!);
