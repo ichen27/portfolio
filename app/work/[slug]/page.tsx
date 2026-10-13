@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { PortfolioShell } from "@/components/portfolio-shell";
 import { allWork, developmentWork } from "@/lib/work";
 
 export const dynamicParams = false;
@@ -15,14 +16,15 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   const item = allWork.find(entry => entry.slug === slug);
   if (!item) notFound();
   const section = developmentWork.some(entry => entry.slug === slug) || slug.startsWith("cloudflare-") ? "Development" : "Research";
-  const sectionHref = `/#${section.toLowerCase()}`;
+  const sectionHref = `/${section.toLowerCase()}/`;
   return (
-    <main id="main" className="case-study">
+    <PortfolioShell active={section}><article className="case-study">
       <nav aria-label="Breadcrumb"><Link href={sectionHref}>← Ivan Chen / {section}</Link></nav>
       <header>
         <p className="work-meta">{item.area} · {item.status}</p>
         <h1>{item.title}</h1>
         <p className="question">{item.question}</p>
+        {item.context && <p className="study-context">{item.context}</p>}
         {item.finding && <p className="study-finding"><span>Finding</span>{item.finding}</p>}
       </header>
       {item.image && <figure>
@@ -48,7 +50,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       {item.flow && <figure className="flow-figure"><ol className="flow">{item.flow.map(step => <li key={step}>{step}</li>)}</ol><figcaption>{item.status === "Design in progress" ? "Proposed workflow." : "A simplified view of the workflow described below."}</figcaption></figure>}
       <div className="prose">{item.sections.map(section => <section key={section.title}><h2>{section.title}</h2><p>{section.text}</p></section>)}</div>
       {item.links && <section className="sources"><h2>Methods & artifacts</h2><ul>{item.links.map(link => <li key={link.href}><a href={link.href}>{link.label} ↗</a></li>)}</ul></section>}
-      <footer><Link href={sectionHref}>← {section}</Link><a href="mailto:ivanzhchen@gmail.com">Get in touch ↗</a></footer>
-    </main>
+      <p className="back-link"><Link href={sectionHref}>← {section}</Link></p>
+    </article></PortfolioShell>
   );
 }

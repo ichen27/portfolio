@@ -4,7 +4,7 @@ import path from "node:path";
 const root = path.resolve("out");
 function files(dir) { return fs.readdirSync(dir, {withFileTypes:true}).flatMap(e => e.isDirectory() ? files(path.join(dir,e.name)) : [path.join(dir,e.name)]); }
 const htmlFiles = files(root).filter(p => p.endsWith(".html"));
-assert.equal(htmlFiles.filter(p => path.relative(root, p).startsWith(`work${path.sep}`)).length, 11, "All eleven case studies must export");
+assert.equal(htmlFiles.filter(p => path.relative(root, p).startsWith(`work${path.sep}`)).length, 16, "All sixteen case studies must export");
 let localLinks = 0;
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file,"utf8");
@@ -26,7 +26,7 @@ assert(home.includes("Ivan Chen") && home.includes('id="research"'));
 assert(!home.includes("Available for Summer 2026"), "Stale availability must be removed");
 assert.equal(fs.readFileSync("public/artifacts/chess-training.csv","utf8").trim().split("\n").length,62);
 assert(fs.statSync("public/resume.pdf").size > 10000);
-console.log(`Export verified: ${htmlFiles.length} pages, ${localLinks} local links/assets, 11 case studies, training data and resume.`);
+console.log(`Export verified: ${htmlFiles.length} pages, ${localLinks} local links/assets, 16 case studies, training data and resume.`);
 
 const researchSlugs = ["handshake-benchmarks", "decision-models", "cad-kernel", "spatial-capture", "vision-training"];
 for (const slug of researchSlugs) {
@@ -63,7 +63,7 @@ assert.equal(benchmark.rows.reduce((n, r) => n + r.not_solved, 0), benchmark.not
 assert.deepEqual([benchmark.tasks, benchmark.attempts, benchmark.solved, benchmark.not_solved], [17, 85, 7, 78]);
 assert.deepEqual(Array.from({length:6}, (_,i) => benchmark.rows.filter(r => r.solved === i).length), [13,1,3,0,0,0]);
 for (const row of benchmark.rows) {
-  assert.deepEqual(Object.keys(row).sort(), ["task", "attempts", "solved", "not_solved", "source_sha256"].sort());
+  assert.deepEqual(Object.keys(row).sort(), ["task", "attempts", "solved", "not_solved", "source_sha256", "category"].sort());
   assert.equal(row.attempts, row.solved + row.not_solved);
   assert.match(row.source_sha256, /^[a-f0-9]{64}$/);
 }
@@ -71,6 +71,41 @@ const csv = fs.readFileSync("public/artifacts/handshake-benchmarks.csv", "utf8")
 assert.equal(csv.length, benchmark.tasks);
 csv.forEach((line, i) => assert.deepEqual(line.split(","), Object.values(benchmark.rows[i]).map(String)));
 const benchmarkPage = fs.readFileSync(path.join(root, "work/handshake-benchmarks/index.html"), "utf8");
-assert(benchmarkPage.includes("handshake-distribution.svg") && benchmarkPage.includes("handshake-tasks.svg"));
-assert(benchmarkPage.includes("including timeouts") && benchmarkPage.includes("archived-results snapshot"));
+assert(benchmarkPage.includes("handshake-methods.svg") && benchmarkPage.includes("handshake-categories.svg"));
+assert(benchmarkPage.includes("Local method comparisons") && benchmarkPage.includes("official evaluations"));
 console.log("Handshake evidence verified: 17 anonymous records, 85 attempts, 7 solves, CSV/JSON agreement.");
+
+const runtime = JSON.parse(fs.readFileSync("public/artifacts/decision-runtime.json", "utf8"));
+assert.equal(runtime.rows.length, 60);
+assert.equal(new Set(runtime.rows.map(r=>r.family)).size, 10);
+for (const g of runtime.groups) {
+ const rows = runtime.rows.filter(r=>r.family === g.family && r.mode === g.mode);
+ assert.equal(rows.length, 2);
+ assert.equal(rows.filter(r=>r.passed).length, g.passed);
+ assert(Math.abs(rows.reduce((n,r)=>n+r.seconds,0)/2-g.mean_seconds)<1e-8);
+ assert(Math.abs(rows.reduce((n,r)=>n+r.estimated_usd,0)/2-g.mean_estimated_usd)<1e-10);
+}
+for (const total of runtime.totals) {
+ const rows = runtime.rows.filter(r=>r.mode===total.mode);
+ assert.equal(rows.length, total.runs);
+ assert.equal(rows.filter(r=>r.passed).length, total.passed);
+ assert.equal(rows.reduce((n,r)=>n+r.model_calls,0),total.calls);
+ assert(Math.abs(rows.reduce((n,r)=>n+r.estimated_usd,0)-total.estimatedUsd)<1e-10);
+}
+const categories = benchmark.categories;
+assert.equal(categories.length, 11);
+for(const c of categories) {
+ const rows=benchmark.rows.filter(r=>r.category===c.category);
+ assert.equal(rows.length,c.tasks);
+ assert.equal(rows.reduce((n,r)=>n+r.solved,0),c.solved);
+ assert.equal(rows.reduce((n,r)=>n+r.attempts,0),c.attempts);
+}
+for(const [route,label] of [["research","Research"],["development","Development"],["experience","Experience"],["about","About me"]]) {
+ const html=fs.readFileSync(path.join(root,route,"index.html"),"utf8");
+ assert(html.includes('aria-current="page"') && html.includes(label));
+ assert(html.includes(`href="/${route}/"`));
+}
+const development=fs.readFileSync(path.join(root,"development/index.html"),"utf8");
+for(const title of ["ClearFlow","CuseSublets","Personal Inbox","Launchpad","Restaurant Call Agent","Enterprise Knowledge Base"]) assert(development.includes(title));
+assert(!home.includes("advice") && !fs.readFileSync(path.join(root,"work/decision-models/index.html"),"utf8").includes("advice"));
+console.log("Compared 60 runtime runs, 11 official problem categories, and verified four separate portfolio pages.");

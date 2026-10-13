@@ -17,18 +17,18 @@ a=json.loads((root/"agent-trial.json").read_text())
 fig,ax=plt.subplots(figsize=(10,4))
 for y,(label,vals) in enumerate([
     ("General agent",[t["correct"] for t in a["arms"]["plain"]["timeline"]]),
-    ("Agent + advice",[t["correct"] for t in a["arms"]["assisted"]["timeline"]]),
-    ("Advice alone",[t["advice_correct"] for t in a["arms"]["assisted"]["timeline"]])
+    ("Agent + decision model",[t["correct"] for t in a["arms"]["assisted"]["timeline"]]),
+    ("Decision model selections",[t["advice_correct"] for t in a["arms"]["assisted"]["timeline"]])
 ]):
     ax.scatter(range(1,41),[2-y]*40,c=[green if v else orange for v in vals],marker="s",s=52)
     ax.text(42,2-y,f"{sum(vals)}/40",va="center",color=ink)
-ax.set_yticks([2,1,0],["General agent","Agent + advice","Advice alone"])
+ax.set_yticks([2,1,0],["General agent","Agent + decision model","Decision model selections"])
 ax.set_xticks([1,10,20,30,40]); ax.set_xlim(0,46); ax.set_ylim(-.8,2.8)
 ax.set_xlabel("Event in the authored revision sequence",labelpad=12)
 for edge in ax.spines.values(): edge.set_visible(False)
 ax.tick_params(axis="both",length=0,pad=8); ax.set_facecolor(paper)
 ax.set_title("40 decisions. Five incorrect recommendations. No changed final actions.",loc="left",pad=18,fontsize=12)
-fig.text(.02,.015,"Green: accepted action. Orange: incorrect advice, overridden by the general agent. One paired sequence.",fontsize=9,color=muted)
+fig.text(.02,.015,"Green: accepted action. Orange: incorrect model selection, overridden by the general agent. One paired sequence.",fontsize=9,color=muted)
 finish(fig,"agent-decisions.svg")
 s=json.loads((root/"splat-training.json").read_text())
 fig,axs=plt.subplots(1,2,figsize=(10,4))

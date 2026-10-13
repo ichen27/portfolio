@@ -39,3 +39,15 @@ Screenshots: docs/media/handshake-desktop.png and handshake-mobile.png.
 ## Section navigation and personal copy — October 13, 2026
 
 Reviewed the focused diff: dedicated sections, metadata, selected development entries and section-aware breadcrumbs. Existing /#work anchor retained for compatibility. No actionable findings. Lint (zero errors, eight pre-existing warnings), typecheck, build and export checks passed. Browser inspection at 1280/390/320px confirms five research entries, three development entries, About me golf copy, valid navigation targets, no horizontal overflow or broken images. Launcher breadcrumb returns to Development. Screenshots: docs/media/sections-desktop.png and sections-mobile.png.
+
+## Research comparison and page navigation review — October 13, 2026
+
+Reviewed content against current source data and the difficulty ledger. Important corrections:
+- Use the fair ML inference revision (3/10), not the earlier 0/10.
+- Keep local method probes separate from official domain results.
+- Include Luna and all 60 runs; don't imply hybrid gains are Decisions-only.
+- Label cost as recorded estimates and model failures with their actual cause.
+- Update messaging to the implemented inbox plus the broader Dot design.
+- Preserve source-record hashes while exporting numerical fields only.
+
+Validation: lint (zero errors; eight legacy warnings), typecheck, production build, export/link checks passed. Data checks reconcile all 60 runtime rows, per-family means, correctness, calls and costs; official categories reconcile with the 17 source projections. Browser checks cover four pages and both revised studies at 320px, plus desktop/390px screenshots; no overflow or broken images, one active navigation link per page. Experience navigation updates its active state. Reviewed actual figures, tables, demo images and mobile layout. No actionable findings remain.

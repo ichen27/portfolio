@@ -25,10 +25,17 @@ for file in sorted(source.glob("*delivery-record.json")):
         "attempts": 5,
         "solved": solved,
         "not_solved": 5 - solved,
+        "category": record["category"],
         "source_sha256": hashlib.sha256(file.read_bytes()).hexdigest(),
     })
 assert rows, "No completed five-trial records found"
+categories = {}
+for row in rows:
+    g = categories.setdefault(row["category"], {"category":row["category"],"tasks":0,"attempts":0,"solved":0})
+    for key in ["attempts", "solved"]: g[key] += row[key]
+    g["tasks"] += 1
 payload = {
+    "categories": list(categories.values()),
     "schema_version": 1,
     "snapshot_date": "2026-10-13",
     "source_type": "Archived official five-trial results recorded in private delivery summaries",
@@ -51,7 +58,7 @@ payload = {
 }
 (target / "handshake-benchmarks.json").write_text(json.dumps(payload, indent=2) + "\n")
 with (target / "handshake-benchmarks.csv").open("w", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+    writer = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
     writer.writeheader()
     writer.writerows(rows)
 print(f"Exported {len(rows)} tasks, {payload['attempts']} attempts, {payload['solved']} solved; excluded {excluded} incomplete record(s).")

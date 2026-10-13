@@ -1,0 +1,25 @@
+{
+  "source_sha256": "d3df2da8fdbd1003455c33ace8ea6148226b3155364063a40ca57e249ede8008",
+  "case_count": 28,
+  "scores": {
+    "rules": {
+      "correct": 21,
+      "total": 28,
+      "available": 28,
+      "false_ready": 0
+    },
+    "jev": {
+      "correct": 27,
+      "total": 28,
+      "available": 28,
+      "false_ready": 0
+    },
+    "baseline": {
+      "correct": 28,
+      "total": 28,
+      "available": 28,
+      "false_ready": 0
+    }
+  },
+  "scope": "Frozen selection replay; no geometry actions executed. Baseline cost and latency unavailable. C04 clarification is a defensible alternative to the frozen label."
+}
