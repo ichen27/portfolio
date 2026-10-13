@@ -1,0 +1,1115 @@
+{
+  "source_sha256": "ebee82e4312e959b40368091c65c8b20b635fa30b30c52beace6ad3598d62cb8",
+  "date": "2026-10-12",
+  "method": "Ten synthetic use cases, two repetitions, three policies; same fixtures and deterministic graders; counterbalanced sequential order.",
+  "limitations": [
+    "Small smoke benchmark, not a statistical superiority test.",
+    "Hybrid combines Decisions with Astra planning and completion; no standalone Decisions-only arm.",
+    "Costs are recorded standard-rate estimates, not bills or current pricing.",
+    "All runtime calls counted; browser execution and parent-agent setup excluded."
+  ],
+  "totals": [
+    {
+      "mode": "astra",
+      "runs": 20,
+      "passed": 20,
+      "medianSeconds": 3.5334582080000256,
+      "p95Seconds": 5.98834825000001,
+      "totalSeconds": 68.53748175200002,
+      "estimatedUsd": 0.23936000000000002,
+      "accountedUsd": 0.23936000000000002,
+      "calls": 36,
+      "fallbacks": 0,
+      "steps": 36,
+      "failures": 0,
+      "families": [
+        {
+          "family": "retrieval",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "multi_hop",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "conflicting_evidence",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "file_search",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "arithmetic",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "classification",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "tool_routing",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "abstention",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "untrusted_content",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "constraint_reasoning",
+          "passed": 2,
+          "runs": 2
+        }
+      ]
+    },
+    {
+      "mode": "luna",
+      "runs": 20,
+      "passed": 19,
+      "medianSeconds": 2.542375874999998,
+      "p95Seconds": 4.1045082919999984,
+      "totalSeconds": 50.861559708000016,
+      "estimatedUsd": 0.0026140000000000004,
+      "accountedUsd": 0.0026140000000000004,
+      "calls": 35,
+      "fallbacks": 0,
+      "steps": 34,
+      "failures": 1,
+      "families": [
+        {
+          "family": "retrieval",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "multi_hop",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "conflicting_evidence",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "file_search",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "arithmetic",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "classification",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "tool_routing",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "abstention",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "untrusted_content",
+          "passed": 1,
+          "runs": 2
+        },
+        {
+          "family": "constraint_reasoning",
+          "passed": 2,
+          "runs": 2
+        }
+      ]
+    },
+    {
+      "mode": "hybrid",
+      "runs": 20,
+      "passed": 20,
+      "medianSeconds": 4.001942958,
+      "p95Seconds": 4.812246166000005,
+      "totalSeconds": 58.964360666000005,
+      "estimatedUsd": 0.1866858,
+      "accountedUsd": 0.1866858,
+      "calls": 60,
+      "fallbacks": 26,
+      "steps": 36,
+      "failures": 0,
+      "families": [
+        {
+          "family": "retrieval",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "multi_hop",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "conflicting_evidence",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "file_search",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "arithmetic",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "classification",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "tool_routing",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "abstention",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "untrusted_content",
+          "passed": 2,
+          "runs": 2
+        },
+        {
+          "family": "constraint_reasoning",
+          "passed": 2,
+          "runs": 2
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "family": "retrieval",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 4.841060437500013,
+      "mean_estimated_usd": 0.013989999999999999
+    },
+    {
+      "family": "retrieval",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 2.762292188,
+      "mean_estimated_usd": 0.00015565000000000002
+    },
+    {
+      "family": "retrieval",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 4.466382395999999,
+      "mean_estimated_usd": 0.0140665
+    },
+    {
+      "family": "multi_hop",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 5.706227625000006,
+      "mean_estimated_usd": 0.023114999999999997
+    },
+    {
+      "family": "multi_hop",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 3.811233917000003,
+      "mean_estimated_usd": 0.00025915
+    },
+    {
+      "family": "multi_hop",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 5.658446041999994,
+      "mean_estimated_usd": 0.0161062
+    },
+    {
+      "family": "conflicting_evidence",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 4.07367543799999,
+      "mean_estimated_usd": 0.015655000000000002
+    },
+    {
+      "family": "conflicting_evidence",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 2.9681383954999987,
+      "mean_estimated_usd": 0.00017030000000000002
+    },
+    {
+      "family": "conflicting_evidence",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 4.0653059165,
+      "mean_estimated_usd": 0.0157092
+    },
+    {
+      "family": "file_search",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 3.590312479499997,
+      "mean_estimated_usd": 0.01453
+    },
+    {
+      "family": "file_search",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 3.323442083499998,
+      "mean_estimated_usd": 0.00015705
+    },
+    {
+      "family": "file_search",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 4.658284541500001,
+      "mean_estimated_usd": 0.0146101
+    },
+    {
+      "family": "arithmetic",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 3.560982167000006,
+      "mean_estimated_usd": 0.00893
+    },
+    {
+      "family": "arithmetic",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 2.706217853999999,
+      "mean_estimated_usd": 9.705e-05
+    },
+    {
+      "family": "arithmetic",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 1.8346063749999995,
+      "mean_estimated_usd": 0.0047232
+    },
+    {
+      "family": "classification",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 1.6274080625000025,
+      "mean_estimated_usd": 0.00489
+    },
+    {
+      "family": "classification",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 0.9974958540000007,
+      "mean_estimated_usd": 5.6149999999999996e-05
+    },
+    {
+      "family": "classification",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 0.19616604150000058,
+      "mean_estimated_usd": 2.64e-05
+    },
+    {
+      "family": "tool_routing",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 1.5934480414999999,
+      "mean_estimated_usd": 0.00514
+    },
+    {
+      "family": "tool_routing",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 0.989266208500001,
+      "mean_estimated_usd": 5.915e-05
+    },
+    {
+      "family": "tool_routing",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 0.23266697900000144,
+      "mean_estimated_usd": 2.8100000000000002e-05
+    },
+    {
+      "family": "abstention",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 3.6719793124999995,
+      "mean_estimated_usd": 0.014190000000000001
+    },
+    {
+      "family": "abstention",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 3.660975333000002,
+      "mean_estimated_usd": 0.00015565
+    },
+    {
+      "family": "abstention",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 4.073995021000003,
+      "mean_estimated_usd": 0.0142707
+    },
+    {
+      "family": "untrusted_content",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 3.9515324580000013,
+      "mean_estimated_usd": 0.01369
+    },
+    {
+      "family": "untrusted_content",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 1,
+      "mean_seconds": 2.838114812499996,
+      "mean_estimated_usd": 0.0001261
+    },
+    {
+      "family": "untrusted_content",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 4.183572312500008,
+      "mean_estimated_usd": 0.0137695
+    },
+    {
+      "family": "constraint_reasoning",
+      "mode": "astra",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 1.6521148544999962,
+      "mean_estimated_usd": 0.00555
+    },
+    {
+      "family": "constraint_reasoning",
+      "mode": "luna",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 1.3736032080000076,
+      "mean_estimated_usd": 7.075000000000001e-05
+    },
+    {
+      "family": "constraint_reasoning",
+      "mode": "hybrid",
+      "runs": 2,
+      "passed": 2,
+      "mean_seconds": 0.1127547080000004,
+      "mean_estimated_usd": 3.3e-05
+    }
+  ],
+  "rows": [
+    {
+      "family": "retrieval",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 6.148662667,
+      "estimated_usd": 0.013989999999999999,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "retrieval",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 2.7316142919999993,
+      "estimated_usd": 0.0001519,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "retrieval",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 4.763819667,
+      "estimated_usd": 0.0140665,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "multi_hop",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 3.813298584,
+      "estimated_usd": 0.00025489999999999996,
+      "model_calls": 3,
+      "fallbacks": 0,
+      "steps": 3
+    },
+    {
+      "family": "multi_hop",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 4.123694709,
+      "estimated_usd": 0.0161062,
+      "model_calls": 5,
+      "fallbacks": 2,
+      "steps": 3
+    },
+    {
+      "family": "multi_hop",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 5.424107,
+      "estimated_usd": 0.023039999999999998,
+      "model_calls": 3,
+      "fallbacks": 0,
+      "steps": 3
+    },
+    {
+      "family": "conflicting_evidence",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 4.128668875,
+      "estimated_usd": 0.0158592,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "conflicting_evidence",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 4.066479333999999,
+      "estimated_usd": 0.01573,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "conflicting_evidence",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 3.4010744160000033,
+      "estimated_usd": 0.0001733,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "file_search",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 3.7116805840000016,
+      "estimated_usd": 0.01453,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "file_search",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 2.542375874999998,
+      "estimated_usd": 0.00015680000000000002,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "file_search",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 4.812246166000005,
+      "estimated_usd": 0.0146101,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "arithmetic",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 2.4150585409999987,
+      "estimated_usd": 9.18e-05,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "arithmetic",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 1.8350631249999934,
+      "estimated_usd": 0.0047232,
+      "model_calls": 2,
+      "fallbacks": 1,
+      "steps": 2
+    },
+    {
+      "family": "arithmetic",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 3.356228792000002,
+      "estimated_usd": 0.00893,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "classification",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 0.2933559999999998,
+      "estimated_usd": 2.64e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "classification",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 1.3478896250000034,
+      "estimated_usd": 0.00489,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "classification",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 1.0516290000000008,
+      "estimated_usd": 5.79e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "tool_routing",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 1.4003223750000033,
+      "estimated_usd": 0.00514,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "tool_routing",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 0.9549764170000054,
+      "estimated_usd": 5.7400000000000006e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "tool_routing",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 0.36040383300000395,
+      "estimated_usd": 2.8100000000000002e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "abstention",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 3.1653141659999964,
+      "estimated_usd": 0.00015539999999999998,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "abstention",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 4.524806125000003,
+      "estimated_usd": 0.0142707,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "abstention",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 3.623994584,
+      "estimated_usd": 0.014190000000000001,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "untrusted_content",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 4.078919708000002,
+      "estimated_usd": 0.0137695,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "untrusted_content",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 3.4468180830000055,
+      "estimated_usd": 0.01369,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "untrusted_content",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": false,
+      "seconds": 2.222097207999992,
+      "estimated_usd": 9.78e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 0
+    },
+    {
+      "family": "constraint_reasoning",
+      "mode": "astra",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 1.6485078749999957,
+      "estimated_usd": 0.00555,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "constraint_reasoning",
+      "mode": "luna",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 1.5101509159999986,
+      "estimated_usd": 7.05e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "constraint_reasoning",
+      "mode": "hybrid",
+      "repeat": 0,
+      "passed": true,
+      "seconds": 0.08790429099999893,
+      "estimated_usd": 3.3e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "file_search",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 4.1045082919999984,
+      "estimated_usd": 0.0001573,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "file_search",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 4.504322916999998,
+      "estimated_usd": 0.0146101,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "file_search",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 3.468944374999992,
+      "estimated_usd": 0.01453,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "arithmetic",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 1.8341496250000056,
+      "estimated_usd": 0.0047232,
+      "model_calls": 2,
+      "fallbacks": 1,
+      "steps": 2
+    },
+    {
+      "family": "arithmetic",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 3.7657355420000096,
+      "estimated_usd": 0.00893,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "arithmetic",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 2.997377166999999,
+      "estimated_usd": 0.00010229999999999999,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "classification",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 1.9069265000000013,
+      "estimated_usd": 0.00489,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "classification",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 0.9433627080000005,
+      "estimated_usd": 5.44e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "classification",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 0.09897608300000138,
+      "estimated_usd": 2.64e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "tool_routing",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 1.0235559999999968,
+      "estimated_usd": 6.09e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "tool_routing",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 0.10493012499999896,
+      "estimated_usd": 2.8100000000000002e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "tool_routing",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 1.7865737079999962,
+      "estimated_usd": 0.00514,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "abstention",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 3.623183917000002,
+      "estimated_usd": 0.0142707,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "abstention",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 3.7199640409999994,
+      "estimated_usd": 0.014190000000000001,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "abstention",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 4.156636500000007,
+      "estimated_usd": 0.0001559,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "untrusted_content",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 4.456246832999997,
+      "estimated_usd": 0.01369,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "untrusted_content",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 3.4541324170000007,
+      "estimated_usd": 0.0001544,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "untrusted_content",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 4.288224917000014,
+      "estimated_usd": 0.0137695,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "constraint_reasoning",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 1.2370555000000167,
+      "estimated_usd": 7.1e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "constraint_reasoning",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 0.13760512500000185,
+      "estimated_usd": 3.3e-05,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "constraint_reasoning",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 1.6557218339999964,
+      "estimated_usd": 0.00555,
+      "model_calls": 1,
+      "fallbacks": 0,
+      "steps": 1
+    },
+    {
+      "family": "retrieval",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 4.168945124999999,
+      "estimated_usd": 0.0140665,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "retrieval",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 3.5334582080000256,
+      "estimated_usd": 0.013989999999999999,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "retrieval",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 2.7929700840000007,
+      "estimated_usd": 0.00015940000000000003,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "multi_hop",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 5.98834825000001,
+      "estimated_usd": 0.02319,
+      "model_calls": 3,
+      "fallbacks": 0,
+      "steps": 3
+    },
+    {
+      "family": "multi_hop",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 3.8091692500000063,
+      "estimated_usd": 0.0002634,
+      "model_calls": 3,
+      "fallbacks": 0,
+      "steps": 3
+    },
+    {
+      "family": "multi_hop",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 7.193197374999989,
+      "estimated_usd": 0.0161062,
+      "model_calls": 5,
+      "fallbacks": 2,
+      "steps": 3
+    },
+    {
+      "family": "conflicting_evidence",
+      "mode": "luna",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 2.5352023749999937,
+      "estimated_usd": 0.0001673,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    },
+    {
+      "family": "conflicting_evidence",
+      "mode": "hybrid",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 4.001942958,
+      "estimated_usd": 0.015559199999999999,
+      "model_calls": 4,
+      "fallbacks": 2,
+      "steps": 2
+    },
+    {
+      "family": "conflicting_evidence",
+      "mode": "astra",
+      "repeat": 1,
+      "passed": true,
+      "seconds": 4.080871541999979,
+      "estimated_usd": 0.01558,
+      "model_calls": 2,
+      "fallbacks": 0,
+      "steps": 2
+    }
+  ]
+}

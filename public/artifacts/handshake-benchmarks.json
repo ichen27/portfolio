@@ -1,4 +1,72 @@
 {
+  "categories": [
+    {
+      "category": "Build Dependency and Release Management",
+      "tasks": 2,
+      "attempts": 10,
+      "solved": 0
+    },
+    {
+      "category": "Systems Infrastructure and Operations",
+      "tasks": 1,
+      "attempts": 5,
+      "solved": 0
+    },
+    {
+      "category": "Model Training and ML Infrastructure",
+      "tasks": 2,
+      "attempts": 10,
+      "solved": 2
+    },
+    {
+      "category": "Machine Learning and AI",
+      "tasks": 1,
+      "attempts": 5,
+      "solved": 0
+    },
+    {
+      "category": "Hardware Embedded and Low Level Systems",
+      "tasks": 3,
+      "attempts": 15,
+      "solved": 3
+    },
+    {
+      "category": "Security",
+      "tasks": 1,
+      "attempts": 5,
+      "solved": 0
+    },
+    {
+      "category": "Scientific Computing and Domain Science",
+      "tasks": 1,
+      "attempts": 5,
+      "solved": 0
+    },
+    {
+      "category": "Software Engineering",
+      "tasks": 1,
+      "attempts": 5,
+      "solved": 2
+    },
+    {
+      "category": "File and Media Operations",
+      "tasks": 2,
+      "attempts": 10,
+      "solved": 0
+    },
+    {
+      "category": "Data Science and Reporting",
+      "tasks": 2,
+      "attempts": 10,
+      "solved": 0
+    },
+    {
+      "category": "Games Puzzles and Interactive Simulation",
+      "tasks": 1,
+      "attempts": 5,
+      "solved": 0
+    }
+  ],
   "schema_version": 1,
   "snapshot_date": "2026-10-13",
   "source_type": "Archived official five-trial results recorded in private delivery summaries",
@@ -23,6 +91,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Build Dependency and Release Management",
       "source_sha256": "8d3168555cdeb4883d22fb9b5681d3c0b4cd06ff03ecf67aa2ac967005db6282"
     },
     {
@@ -30,6 +99,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Systems Infrastructure and Operations",
       "source_sha256": "c0ff7ee880cf73d2d3a93c71f833b082bbc0d1a97afb54fb528e4871c51e457d"
     },
     {
@@ -37,6 +107,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Model Training and ML Infrastructure",
       "source_sha256": "e65d73507617e92adb654a2f7546360eee1c20f804d810b24aed2a3ace803e10"
     },
     {
@@ -44,6 +115,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Machine Learning and AI",
       "source_sha256": "e9f42d0d0c142763e578c148ab1a76383d9b13c9ab0c730a09c800c1388d07c9"
     },
     {
@@ -51,6 +123,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Hardware Embedded and Low Level Systems",
       "source_sha256": "a9ed665e83a47c76ee11cc8035cd1014210165031cf16aadf03cb3d680ab0ccb"
     },
     {
@@ -58,6 +131,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Security",
       "source_sha256": "35d8ed50882ade3ebdddaafd99328a920c313f4cb1535eb542c50e56beb9ccd8"
     },
     {
@@ -65,6 +139,7 @@
       "attempts": 5,
       "solved": 2,
       "not_solved": 3,
+      "category": "Hardware Embedded and Low Level Systems",
       "source_sha256": "11307243d84c341fdb1e4f9355f386269a55c54941ccceef658bb9dd985ecd58"
     },
     {
@@ -72,6 +147,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Scientific Computing and Domain Science",
       "source_sha256": "318cd05280d5faf6d37e21c72ad7af5af551cbfc525cda4ac842f935a4755aac"
     },
     {
@@ -79,6 +155,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Build Dependency and Release Management",
       "source_sha256": "b424d06888c7ba4c8dcf9df40347a74f06d37c21c8e0a0a841b828f579922df4"
     },
     {
@@ -86,6 +163,7 @@
       "attempts": 5,
       "solved": 1,
       "not_solved": 4,
+      "category": "Hardware Embedded and Low Level Systems",
       "source_sha256": "3aa026156861c0503bc84bd0cd85be7e83f4f3ba59667dd7d91728e827fb9759"
     },
     {
@@ -93,6 +171,7 @@
       "attempts": 5,
       "solved": 2,
       "not_solved": 3,
+      "category": "Software Engineering",
       "source_sha256": "cf78a46f8103e6ecf3def75d91c9a94d10ebed6ae35805919feebd682497e7b6"
     },
     {
@@ -100,6 +179,7 @@
       "attempts": 5,
       "solved": 2,
       "not_solved": 3,
+      "category": "Model Training and ML Infrastructure",
       "source_sha256": "6fbfb9ee37ae7d897cf52177e6bc767a038a18a16a30b6f6c267c4c4542667a2"
     },
     {
@@ -107,6 +187,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "File and Media Operations",
       "source_sha256": "370cae7647d4991b3597f7728e843ab432ec5dfc00bfbe7d939e8f822dc49975"
     },
     {
@@ -114,6 +195,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Data Science and Reporting",
       "source_sha256": "86f07bc28093d5cc122a83e8a21d72314037dab4c9d861c3b110f43de9e3a69f"
     },
     {
@@ -121,6 +203,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Games Puzzles and Interactive Simulation",
       "source_sha256": "f2e1ded8cbd6fb20dc3bea1a3dd2305d43452c24d53225fad98b9de7359e9601"
     },
     {
@@ -128,6 +211,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "Data Science and Reporting",
       "source_sha256": "f7ca799138525aced4d9d8b2ff024c49077aa7f7b9b322540dc3edaa333205ad"
     },
     {
@@ -135,6 +219,7 @@
       "attempts": 5,
       "solved": 0,
       "not_solved": 5,
+      "category": "File and Media Operations",
       "source_sha256": "e0c2ac876248a48fee8e8bfc7e6e0dbabf89557cfcfb224e53f7a65bbbd15b9c"
     }
   ]

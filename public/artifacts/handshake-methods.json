@@ -1,0 +1,78 @@
+{
+  "snapshot_date": "2026-10-13",
+  "source": "Curated observations from the private Dynamo difficulty-methods ledger",
+  "selection": "Four documented local redesign comparisons selected to contrast methods that remained easy with methods that reduced observed solves. Not a complete inventory or controlled experiment.",
+  "metric": "Solved attempts / attempted solves",
+  "limitations": [
+    "Task revisions changed more than one factor; differences do not establish a causal effect.",
+    "Local historical probes have different sample sizes and are not pooled with official evaluations.",
+    "Small samples and changing tasks cannot support a general model ranking."
+  ],
+  "rows": [
+    {
+      "id": "M1",
+      "label": "Finite rule enumeration",
+      "domain": "Formal verification",
+      "before": {
+        "solved": 2,
+        "total": 2
+      },
+      "after": {
+        "solved": 2,
+        "total": 2
+      },
+      "change": "Add a distinction between proof and property roles.",
+      "interpretation": "Still easy: a fully specified bounded search remained directly implementable.",
+      "source_entry_sha256": "089c51362350420ee561d544724dcf2e58ef2eb516f222cf861076a77820d4ea"
+    },
+    {
+      "id": "M2",
+      "label": "Named convention profiles",
+      "domain": "CAD / fabrication",
+      "before": {
+        "solved": 2,
+        "total": 2
+      },
+      "after": {
+        "solved": 2,
+        "total": 2
+      },
+      "change": "Add scope-specific revision ordering to an archive-local profile task.",
+      "interpretation": "Still easy: fresh agents implemented the finite profile space even when old solutions failed.",
+      "source_entry_sha256": "86ac780fe21bfd8a51c512701bb9c0cccbd80d5bf91d2f9c29722abab10d3ceb"
+    },
+    {
+      "id": "M3",
+      "label": "Competing evidence scopes",
+      "domain": "Version control",
+      "before": {
+        "solved": 2,
+        "total": 2
+      },
+      "after": {
+        "solved": 0,
+        "total": 5
+      },
+      "change": "Require separating target evidence from other valid evidence in the same environment.",
+      "interpretation": "Harder locally: plausible global processing violated an explicit scope boundary.",
+      "source_entry_sha256": "8f52922ce0d4c68b56ac4eac72089c36b9828a42cb7f20c6cbdfb2bb9f982070"
+    },
+    {
+      "id": "M4",
+      "label": "Archive-specific inference",
+      "domain": "ML / replay auditing",
+      "before": {
+        "solved": 2,
+        "total": 2
+      },
+      "after": {
+        "solved": 3,
+        "total": 10
+      },
+      "change": "Replace a single visible profile with evidence-based inference; use the later fairness-corrected probe.",
+      "interpretation": "Harder locally after removing an undisclosed tie-break. The fair revision is reported, not the earlier 0/10.",
+      "source_entry_sha256": "369a0f1ccf5cd480a7f804542405e833ced46806258a9e2c21244ba7372e8c19"
+    }
+  ],
+  "source_sha256": "0a5b585303c2ccf7c4f0f62cdb1c1af338a6ccbdb51e193b7d3d8bf6fcbc3390"
+}
