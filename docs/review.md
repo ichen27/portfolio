@@ -1,13 +1,23 @@
-# Redesign review — October 12, 2026
+# Research revision review — October 13, 2026
 
-Reviewed the homepage, shared case-study renderer, source content, build configuration, and export checks against the requested minimal portfolio.
+User correction: Agent Queue is unrelated to the intended agent-harness research. The site must foreground research and evidence, not frontend/app development.
 
-- Desktop 1280px and mobile 390px screenshots inspected. Home at 320px has no horizontal overflow. Keyboard Tab reaches the skip link.
-- Actual Agent Queue demo and CAD validation media inspected; synthetic/demo content is captioned. Vision chart comes from the original CSV.
-- Corrected image dimensions to reserve the actual aspect ratio, relative figure wording, and the start command for static export.
-- Build and exported-site validation pass: ten case studies, 211 local link/asset references, resume and training CSV.
-- Lint passes with eight existing warnings in inactive legacy components. TypeScript passes. No dependency changes.
-- No protected main branch was configured when inspected. CI runs on pull requests and main; merge must wait for current checks.
-- Original portfolio and portfolio-preview working tree changes are preserved in their separate checkouts.
+## Result
+- Removed Agent Queue association and public image. Four evidence-backed studies lead the homepage; experience follows.
+- Every featured study has a measured finding, real data-derived figure, accessible result table, and downloadable evidence. Actual geometry figure retained.
+- Restored completed long-session trial and Gaussian-splat experiment evidence previously omitted from the portfolio.
+- Agent-harness page identifies research questions, links the documented evaluation method, and does not claim the advisor pilot is an ablation of the harness itself. Exact current harness project remains to be identified by the user.
+- Existing non-research URLs remain available, but launcher, messaging design, and CAD application notes are not featured as measured research.
 
-CI exposed an export-check path bug: the GitHub runner checkout itself contains `/work/`. The check now selects case studies by their path relative to the export root.
+## Findings resolved
+- Scored advice against acceptable_actions. E17 permits build; nominal expected_action alone would falsely count a sixth wrong recommendation.
+- Disclosed that splat cleanup reused the same synthetic evaluation set. No physical-accuracy or fresh-test claim.
+- Published only explicit numeric projections and source hashes, excluding raw messages, source paths and personal apartment images.
+- Full-resolution figure links and downloadable data work without application state.
+
+## Verification
+Lint (eight pre-existing inactive-component warnings), TypeScript, production build and export checks pass.
+Fourteen exported HTML documents and 236 local link/asset references checked; ten existing study/note URLs retained.
+Desktop and mobile screenshots inspected. Homepage and all four research studies tested at 320px: no horizontal overflow or broken images.
+Evidence checks cover all 80 agent events, five incorrect recommendations, the E17 recovery case, all 54 geometry cases and splat counts.
+No branch protection is configured on main; current CI and Vercel preview must pass before merge.
