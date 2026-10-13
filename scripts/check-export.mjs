@@ -4,7 +4,7 @@ import path from "node:path";
 const root = path.resolve("out");
 function files(dir) { return fs.readdirSync(dir, {withFileTypes:true}).flatMap(e => e.isDirectory() ? files(path.join(dir,e.name)) : [path.join(dir,e.name)]); }
 const htmlFiles = files(root).filter(p => p.endsWith(".html"));
-assert.equal(htmlFiles.filter(p => p.includes("/work/")).length, 10, "All ten case studies must export");
+assert.equal(htmlFiles.filter(p => path.relative(root, p).startsWith(`work${path.sep}`)).length, 10, "All ten case studies must export");
 let localLinks = 0;
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file,"utf8");

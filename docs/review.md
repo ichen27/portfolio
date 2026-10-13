@@ -9,3 +9,5 @@ Reviewed the homepage, shared case-study renderer, source content, build configu
 - Lint passes with eight existing warnings in inactive legacy components. TypeScript passes. No dependency changes.
 - No protected main branch was configured when inspected. CI runs on pull requests and main; merge must wait for current checks.
 - Original portfolio and portfolio-preview working tree changes are preserved in their separate checkouts.
+
+CI exposed an export-check path bug: the GitHub runner checkout itself contains `/work/`. The check now selects case studies by their path relative to the export root.
