@@ -1,0 +1,52 @@
+{
+  "splats": 1498877,
+  "finite": true,
+  "sh_degree": 0,
+  "training_views": 576,
+  "heldout_views": 12,
+  "resolution": [
+    768,
+    576
+  ],
+  "training_steps": 16000,
+  "cleanup": {
+    "input_splats": 1499999,
+    "kept": 1498877,
+    "removed": 1122,
+    "max_sigma": 0.5,
+    "reason": "Exclude exploded Gaussian footprints responsible for colored haze; source geometry and camera views remain unchanged."
+  },
+  "cleaned_metrics": {
+    "psnr": 34.601437,
+    "ssim": 0.9718054
+  },
+  "metrics": [
+    {
+      "steps": 4000,
+      "psnr": 30.802076,
+      "ssim": 0.93751144
+    },
+    {
+      "steps": 8000,
+      "psnr": 30.995832,
+      "ssim": 0.95786595
+    },
+    {
+      "steps": 12000,
+      "psnr": 32.105816,
+      "ssim": 0.9499433
+    },
+    {
+      "steps": 16000,
+      "psnr": 32.253548,
+      "ssim": 0.96096605
+    }
+  ],
+  "sha256": "a8efcdc98db9fbbf0368990707c991d5e81a240230e1888ce7331a888b3a50aa",
+  "provenance": "Trained on synthetic camera views of the repaired textured mesh, not original photographs. Missing original detail is not recovered.",
+  "source": {
+    "file": "training-report.json",
+    "sha256": "baba7664c5b079314d1bdb097301489d260adcc459ddbb71c7fc532f2f6d0327"
+  },
+  "evaluation_note": "The same 12 synthetic evaluation views were used before and after scene-specific cleanup; no fresh test set."
+}

@@ -4,21 +4,38 @@ export type Work = {
   links?: { label: string; href: string }[];
   image?: { src: string; width: number; height: number; alt: string; caption: string };
   flow?: string[];
+  finding?: string;
+  evidence?: { label: string; summary: string; headers: string[]; rows: string[][]; download: string };
 };
 
 export const work: Work[] = [
   {
-    slug: "agent-harnesses", title: "Agent harnesses", area: "Agent systems", status: "Working software",
-    summary: "Keeping coding agents observable and recoverable across long-running sessions.",
-    question: "How do you know when an agent needs attention—and safely help it continue?",
-    sections: [
-      {title: "The problem", text: "An agent can be waiting for a decision, disconnected, or sitting at a shell prompt. Treating all three states as the same creates a dangerous interface: a message intended for the agent can become a shell command."},
-      {title: "What I built", text: "Agent Queue is a session inbox with durable snapshots, explicit reconnect states, monitor acknowledgements, and bounded command delivery. Delivery checks the foreground process, the current prompt, and the screen revision before sending text."},
-      {title: "What I learned", text: "The useful part of a harness is the behavior around the model: what it observes, what it remembers, when it waits, and how it recovers. One review caught an exited-agent shell-prompt case; another caught a state-replacement race. Both became regression tests."},
-      {title: "Evidence and limits", text: "The release was checked with 59 Python tests and five browser tests. The pictured interface is the actual browser demo with synthetic session output. It demonstrates the interaction, not real agent outcomes. The process check and terminal write are still not atomic."},
+    "slug": "agent-harnesses",
+    "title": "Agent harness research",
+    "area": "Agent systems",
+    "status": "Research direction",
+    "summary": "Studying how state, tool feedback, and recovery rules shape an agent’s behavior.",
+    "question": "Which parts of the surrounding system make an agent more reliable?",
+    "sections": [
+      {
+        "title": "Research focus",
+        "text": "I’m interested in how an agent’s environment affects its behavior: what state is available, how tool results are checked, how stale evidence is detected, and how execution recovers after a failure. The question is whether these choices improve task outcomes under a controlled evaluation."
+      },
+      {
+        "title": "An existing evaluation method",
+        "text": "The decision-model study linked below uses a frozen 40-event sequence, the same authoritative state and deterministic checks in both arms, and separate records for provisional choices, advice, and executed actions. It provides an example of the evaluation machinery behind this work."
+      },
+      {
+        "title": "Open question",
+        "text": "That experiment changes access to decision-model advice; it does not isolate the contribution of the harness itself. Measuring harness improvements requires comparisons that vary state handling, tool feedback, or recovery while holding the task and model fixed."
+      }
     ],
-    image: {src: "/artifacts/agent-queue.png", width: 1440, height: 1024, alt: "Agent Queue demo interface with synthetic agent sessions", caption: "Actual Agent Queue demo UI. Session contents are synthetic."},
-    links: [{label: "Source & demo", href: "https://github.com/ichen27/agent-queue"}],
+    "links": [
+      {
+        "label": "Decision-model study: method, event trace and results",
+        "href": "/work/decision-models/"
+      }
+    ]
   },
   {
     slug: "messaging", title: "A messaging harness", area: "Agent systems", status: "Design in progress",
@@ -57,41 +74,251 @@ export const work: Work[] = [
     flow: ["Constrained sketch", "Extrude", "Through hole", "Edit & rebuild", "Save / STEP"],
   },
   {
-    slug: "cad-kernel", title: "Building a geometry kernel", area: "Geometry", status: "Research prototype",
-    summary: "Representing and validating solid boundaries, with independent geometry checks.",
-    question: "How can separate geometry engines agree on what makes a solid valid?",
-    sections: [
-      {title: "The research", text: "Alongside the CAD application, I’m experimenting with original geometry algorithms. Exact planar geometry and analytic curved boundaries now share a representation of vertices, edges, directed edge uses, faces, loops, and shells."},
-      {title: "What makes this difficult", text: "A shape can look correct while its boundary is invalid. The validator checks loop closure, orientation, opposite edge uses, connected vertex links, and shell topology. Curved boundaries use an explicit tolerance while planar rational values remain exact."},
-      {title: "An independent check", text: "The shared-topology milestone passed 54 OCCT comparisons covering validity, connected shells, area, and signed volume. Maximum area error was 6.82 × 10⁻¹³ mm² and volume error was 2.73 × 10⁻¹² mm³. Sampling does not establish global geometric equivalence."},
-      {title: "Current limits", text: "Mixed-backend Booleans, general self-intersection detection, shell nesting, and persistent face naming remain open. The application still uses OCCT; this research is not a replacement for a general-purpose production kernel."},
+    "slug": "cad-kernel",
+    "title": "Validating a shared geometry boundary",
+    "area": "Computational geometry",
+    "status": "Research prototype · October 2026",
+    "summary": "Comparing an original boundary representation with an independent geometry engine.",
+    "question": "Can exact planar geometry and analytic curved boundaries share a reliable topology model?",
+    "finding": "54 OCCT comparisons passed. Maximum volume difference: 2.73 × 10⁻¹² mm³ across the tested cases.",
+    "image": {
+      "src": "/artifacts/shared-topology.png",
+      "width": 2100,
+      "height": 812,
+      "alt": "Actual planar and curved solids with a common topology model, alongside a rejected open boundary.",
+      "caption": "Actual experiment output: exact planar model, analytic curved model, and a deliberately invalid open boundary. OCCT tessellation is used for display."
+    },
+    "evidence": {
+      "label": "Independent comparison",
+      "summary": "Measured across 54 specific geometry cases; the downloadable record includes every workflow and its errors.",
+      "headers": [
+        "Measure",
+        "Recorded result"
+      ],
+      "rows": [
+        [
+          "Cases passing comparison",
+          "54 / 54"
+        ],
+        [
+          "Surface samples",
+          "16,045"
+        ],
+        [
+          "Maximum area difference",
+          "6.82 × 10⁻¹³ mm²"
+        ],
+        [
+          "Maximum volume difference",
+          "2.73 × 10⁻¹² mm³"
+        ],
+        [
+          "Maximum sampled surface distance",
+          "4.02 × 10⁻¹⁵ mm"
+        ]
+      ],
+      "download": "/artifacts/geometry-validation.json"
+    },
+    "sections": [
+      {
+        "title": "Research question",
+        "text": "I’m building original geometry algorithms alongside a CAD application. The problem here is a shared representation: exact planar geometry and analytic curved surfaces need to agree on vertices, directed edge uses, loops, faces, and connected shells."
+      },
+      {
+        "title": "Method",
+        "text": "The validator checks loop closure, orientation, opposite edge uses, connected vertex links, and shell topology. Planar rational values remain exact; curved boundaries use an explicit tolerance. I compare converted shapes against OCCT for validity, shell count, area, signed volume, and sampled surface distance."
+      },
+      {
+        "title": "Result",
+        "text": "All 54 recorded comparisons passed. The figure includes an intentionally missing face to show why plausible appearance is insufficient: an open shell must be rejected even if most of the rendered object looks correct. The full per-case results are available below."
+      },
+      {
+        "title": "Limits of the evidence",
+        "text": "Finite surface samples and matching shell counts do not prove global geometric equivalence. Mixed-backend Booleans, general self-intersection detection, shell nesting, and persistent face naming remain open. These results support this bounded representation, not a claim of a production-ready general CAD kernel."
+      }
     ],
-    image: {src: "/artifacts/shared-topology.png", width: 2100, height: 812, alt: "Rendered examples from the shared analytic boundary and topology validation experiment", caption: "Actual geometry generated by the shared-topology experiment, including a deliberately invalid boundary."},
+    "links": [
+      {
+        "label": "Download all 54 comparison records",
+        "href": "/artifacts/geometry-validation.json"
+      },
+      {
+        "label": "Full-resolution geometry figure",
+        "href": "/artifacts/shared-topology.png"
+      }
+    ]
   },
   {
-    slug: "spatial-capture", title: "3D reconstruction for property walkthroughs", area: "Spatial computing", status: "Exploration",
-    summary: "Exploring how phone captures and Gaussian splats can make spaces easier to inspect remotely.",
-    question: "What makes a reconstruction useful across an entire apartment, rather than one good camera angle?",
-    sections: [
-      {title: "The goal", text: "I’m exploring navigable property walkthroughs as part of my housing-product work. The challenge spans capture coverage, camera calibration, reconstruction, and a viewer that makes missing information apparent."},
-      {title: "Experiments so far", text: "The work includes phone-capture infrastructure, point-cloud and mesh inspection, and a Gaussian-splat training experiment using views rendered from an apartment mesh. That last experiment is mesh-to-splat distillation; it is not reconstruction from phone photographs."},
-      {title: "What I’m checking", text: "Matched source and reconstructed viewpoints are more useful than a single impressive render. Holes, distorted furniture, unseen surfaces, and weak coverage need to be evaluated room by room and along the walkthrough path."},
-      {title: "Current limits", text: "Whole-apartment quality and reliable physical-phone capture remain under evaluation. I’m keeping that distinction visible before describing the pipeline as ready for real-estate use."},
+    "slug": "spatial-capture",
+    "title": "Distilling a textured mesh into Gaussian splats",
+    "area": "3D representation",
+    "status": "Training experiment · October 2026",
+    "summary": "Measuring how well a trained splat reproduces synthetic views of an apartment mesh.",
+    "question": "How faithfully can Gaussian splats reproduce a captured space represented by a textured mesh?",
+    "finding": "After scene-specific cleanup: 34.60 dB PSNR and 0.9718 SSIM on the same 12 synthetic evaluation views.",
+    "image": {
+      "src": "/artifacts/splat-evaluation.svg",
+      "width": 593.3975,
+      "height": 291.602109,
+      "alt": "Recorded PSNR and SSIM at four training checkpoints, with a separately marked post-cleanup evaluation.",
+      "caption": "Measured fidelity to rendered mesh views. The cleanup result reuses the same evaluation views; it is not a new held-out test or a measure of real-world geometric accuracy."
+    },
+    "evidence": {
+      "label": "Training & evaluation",
+      "summary": "Brush optimized an SH-degree-zero representation from rendered views of the existing repaired textured mesh.",
+      "headers": [
+        "Measure",
+        "Recorded result"
+      ],
+      "rows": [
+        [
+          "Training / evaluation views",
+          "576 / 12"
+        ],
+        [
+          "Image resolution",
+          "768 × 576"
+        ],
+        [
+          "Optimization steps",
+          "16,000"
+        ],
+        [
+          "Before cleanup: PSNR / SSIM",
+          "32.25 dB / 0.9610"
+        ],
+        [
+          "After cleanup: PSNR / SSIM",
+          "34.60 dB / 0.9718"
+        ],
+        [
+          "Unstable splats removed",
+          "1,122 of 1,499,999"
+        ]
+      ],
+      "download": "/artifacts/splat-training.json"
+    },
+    "sections": [
+      {
+        "title": "Research question",
+        "text": "Property walkthroughs need representations that remain useful as the camera moves. This experiment isolates representation fidelity: starting with a textured apartment mesh, can a trained Gaussian splat reproduce its rendered appearance at other viewpoints? It is mesh-to-splat distillation, not reconstruction from the original camera photographs."
+      },
+      {
+        "title": "Method",
+        "text": "I rendered 576 calibrated images from 48 interior positions, with 12 directions per position. Twelve additional views used different camera positions and directions. Brush trained for 16,000 steps from 300,000 area-weighted surface samples, with a 1.5-million-splat ceiling and SH degree zero for baked, view-independent textures."
+      },
+      {
+        "title": "Failure analysis & cleanup",
+        "text": "The raw result contained colored haze from a small number of exploded Gaussian footprints. Removing splats with a maximum sigma above 0.5 scene units removed 1,122 splats and left 1,498,877. A final evaluation/export pass improved the recorded PSNR from 32.25 to 34.60 dB and SSIM from 0.9610 to 0.9718."
+      },
+      {
+        "title": "Interpretation",
+        "text": "The measurements describe reproduction of this source mesh on these synthetic views. They do not establish physical dimensions, recovery of missing scan detail, or quality against real photographs. The scene-specific threshold was assessed using the same evaluation set, so the cleaned score is not an untouched test-set estimate."
+      },
+      {
+        "title": "Next experiment",
+        "text": "The next useful comparison is a fresh set of withheld camera paths, with quality assessed along the walkthrough rather than at a single favorable viewpoint. Camera calibration and coverage should be evaluated separately from the representation and cleanup procedure."
+      }
     ],
-    flow: ["Capture / source views", "Camera calibration", "Reconstruction", "Matched-view review"],
+    "links": [
+      {
+        "label": "Download checkpoint metrics and cleanup counts",
+        "href": "/artifacts/splat-training.json"
+      },
+      {
+        "label": "Full-resolution evaluation figure",
+        "href": "/artifacts/splat-evaluation.svg"
+      }
+    ]
   },
   {
-    slug: "decision-models", title: "Decision models + language models", area: "Evaluation", status: "Ongoing experiments",
-    summary: "Testing whether a separate decision model improves an agent’s choices—and when it doesn’t.",
-    question: "Does adding a decision model help, or just add another model call?",
-    sections: [
-      {title: "The experiment", text: "I’m comparing deterministic rules, a general agent, and a structured decision model on bounded CAD workflow decisions. In a paired trial, the general agent first makes a provisional choice, receives decision-model advice, and then records its final action."},
-      {title: "The initial result", text: "On 28 frozen decisions, rules scored 21/28, the decision model 27/28, and the blind general agent 28/28. In a separate four-task paired trial, both the plain and assisted agents completed 4/4. The decision model agreed with all nine provisional choices and the assisted run took longer."},
-      {title: "What that means", text: "The initial trial did not show an improvement from adding advice. Agreement is not the same as added value, and these small task sets do not support a general conclusion about agent reliability."},
-      {title: "The next question", text: "The more interesting direction is whether cheap routine decisions can be handled by a structured model, with ambiguous cases escalated to a general model. Longer-session work also asks about drift, recovery, and calibration. Deterministic checks retain final authority."},
+    "slug": "decision-models",
+    "title": "Do decision models improve agent reliability?",
+    "area": "Agent evaluation",
+    "status": "Paired pilot · October 2026",
+    "summary": "A controlled comparison across 40 revision, inspection, conflict, and recovery events.",
+    "question": "Does adding a decision model improve the choices made by a general agent?",
+    "finding": "Both agents: 40/40 correct actions. Five incorrect advice outputs were overridden. No reliability gain in this pilot.",
+    "image": {
+      "src": "/artifacts/agent-decisions.svg",
+      "width": 665.277031,
+      "height": 305.278984,
+      "alt": "Forty event outcomes for the general agent, assisted agent and decision-model advice. Both agents correct on all events; advice incorrect on five.",
+      "caption": "Computed from the recorded event trace. Advice is scored against the acceptable actions at that event, not just a nominal expected action."
+    },
+    "evidence": {
+      "label": "Recorded outcomes",
+      "summary": "One paired, authored 40-event sequence. The observations are dependent; these counts are not independent trials.",
+      "headers": [
+        "Measure",
+        "General agent",
+        "Agent + Jev"
+      ],
+      "rows": [
+        [
+          "Correct executed actions",
+          "40 / 40",
+          "40 / 40"
+        ],
+        [
+          "Committed Blender builds",
+          "13",
+          "13"
+        ],
+        [
+          "Unsupported readiness claims",
+          "0",
+          "0"
+        ],
+        [
+          "Changed provisional actions",
+          "—",
+          "0"
+        ],
+        [
+          "Incorrect advice overridden",
+          "—",
+          "5 / 40"
+        ]
+      ],
+      "download": "/artifacts/agent-trial.json"
+    },
+    "sections": [
+      {
+        "title": "Question & hypothesis",
+        "text": "I tested whether a structured decision model could help a general agent avoid accumulated mistakes during repeated revisions. The workload included changed clearances, conflicting locked requirements, stale evidence, a missing export, recovery, inspection, and delivery."
+      },
+      {
+        "title": "Method",
+        "text": "Two agents worked through the same 40-event sequence with the same tools, authoritative structured state, and deterministic checks. The assisted arm recorded its provisional action before each live Jev call, then recorded its final action. The advisor received the task packet without the agent’s preference. The protocol and scorer were frozen before the runs."
+      },
+      {
+        "title": "Result",
+        "text": "Both arms correctly executed all 40 events and committed 13 Blender builds. Jev changed none of the agent’s provisional actions. Its five wrong recommendations occurred at E10, E19, E25, E30, and E34: it recommended building when the correct response was inspection or clarification. The agent overrode all five."
+      },
+      {
+        "title": "What the result tells us",
+        "text": "The added advisor showed no reliability benefit on this sequence. A useful harness makes that distinction observable: advice, final decisions, rejected actions, and artifact validity are separate records. A successful final artifact alone would hide the incorrect recommendations."
+      },
+      {
+        "title": "Limitations & next experiment",
+        "text": "This was one authored sequence per arm, roughly nine to ten minutes of execution, with full current state and a known geometry recipe. It did not test context compaction, multi-day work, or independent repetitions. Strong state and explicit requests may create a ceiling effect. A harder evaluation should isolate state/recovery mechanisms and include repeated runs before making a general reliability claim."
+      }
     ],
+    "links": [
+      {
+        "label": "Download the 80-event numeric record",
+        "href": "/artifacts/agent-trial.json"
+      },
+      {
+        "label": "Harness research questions",
+        "href": "/work/agent-harnesses/"
+      }
+    ]
   },
   {
+    finding: "61 logged epochs. Final validation mAP@50-95: 82.16%; no physical-gameplay claim.",
+    evidence: { label: "Historical validation", summary: "Original run log, final recorded epoch. Validation results are not a fresh held-out test.", headers: ["Measure", "Recorded result"], rows: [["Logged / configured epochs", "61 / 100"], ["Precision", "98.26%"], ["Recall", "98.31%"], ["mAP@50", "99.08%"], ["mAP@50-95", "82.16%"]], download: "/artifacts/chess-training.csv" },
     slug: "vision-training", title: "Chess-piece detection model training", area: "Computer vision", status: "Training experiment",
     summary: "Fine-tuning YOLOv8s and connecting piece detections to a structured board state.",
     question: "How do image detections become a board state that downstream software can trust?",
@@ -138,3 +365,5 @@ export const cloudflare: Work[] = [
   },
 ];
 export const allWork = [...work, ...cloudflare];
+
+export const researchWork = ["decision-models", "cad-kernel", "spatial-capture", "vision-training"].map(slug => work.find(item => item.slug === slug)!);

@@ -1,0 +1,1209 @@
+{
+  "protocol": "One paired 40-event authored pilot; dependent observations; digital prototype only.",
+  "integrity_pass": true,
+  "arms": {
+    "plain": {
+      "counters": {
+        "correct_actions": 40,
+        "successful_correct_actions": 40,
+        "attempted_violations": 0,
+        "unsupported_claims": 0,
+        "guard_blocks": 0,
+        "worker_failures": 0,
+        "build_attempts": 13,
+        "committed_builds": 13,
+        "invalid_committed_builds": 0,
+        "deliveries": 9,
+        "initial_action_errors": 0,
+        "jev_action_errors": 0,
+        "changed_actions": 0,
+        "overrides": 0,
+        "jev_calls": 0,
+        "initial_claim_errors": 0,
+        "rejected_submissions": 0
+      },
+      "probabilities": {
+        "initial": {
+          "n": 40,
+          "brier": 2.250000000000004e-05
+        },
+        "final": {
+          "n": 40,
+          "brier": 2.250000000000004e-05
+        }
+      },
+      "timeline": [
+        {
+          "event_id": "E01",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E02",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E03",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E04",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E05",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E06",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E07",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E08",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E09",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E10",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E11",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E12",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E13",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E14",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E15",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E16",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E17",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E18",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E19",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E20",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E21",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E22",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E23",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E24",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E25",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E26",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E27",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E28",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E29",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E30",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E31",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E32",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E33",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E34",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E35",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E36",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E37",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E38",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E39",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.0,
+          "final_probability": 0.0,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        },
+        {
+          "event_id": "E40",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": null,
+          "jev_probability": null,
+          "advice_correct": null
+        }
+      ]
+    },
+    "assisted": {
+      "counters": {
+        "correct_actions": 40,
+        "successful_correct_actions": 40,
+        "attempted_violations": 0,
+        "unsupported_claims": 0,
+        "guard_blocks": 0,
+        "worker_failures": 0,
+        "build_attempts": 13,
+        "committed_builds": 13,
+        "invalid_committed_builds": 0,
+        "deliveries": 9,
+        "initial_action_errors": 0,
+        "jev_action_errors": 5,
+        "changed_actions": 0,
+        "overrides": 5,
+        "jev_calls": 40,
+        "initial_claim_errors": 0,
+        "rejected_submissions": 0
+      },
+      "probabilities": {
+        "initial": {
+          "n": 40,
+          "brier": 0.00010000000000000005
+        },
+        "final": {
+          "n": 40,
+          "brier": 0.00010000000000000005
+        },
+        "jev": {
+          "n": 40,
+          "brier": 0.1989475
+        }
+      },
+      "timeline": [
+        {
+          "event_id": "E01",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.59,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E02",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.08,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E03",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": "deliver",
+          "jev_probability": 0.54,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E04",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.74,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E05",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.1,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E06",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "clarify",
+          "jev_probability": 0.1,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E07",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.59,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E08",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": "deliver",
+          "jev_probability": 0.51,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E09",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.28,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E10",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.58,
+          "advice_correct": false
+        },
+        {
+          "event_id": "E11",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.09,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E12",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "clarify",
+          "jev_probability": 0.31,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E13",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": "deliver",
+          "jev_probability": 0.57,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E14",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "clarify",
+          "jev_probability": 0.32,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E15",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.07,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E16",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.79,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E17",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.03,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E18",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": "deliver",
+          "jev_probability": 0.56,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E19",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.07,
+          "advice_correct": false
+        },
+        {
+          "event_id": "E20",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.82,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E21",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.08,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E22",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": "deliver",
+          "jev_probability": 0.52,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E23",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.73,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E24",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.66,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E25",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.1,
+          "advice_correct": false
+        },
+        {
+          "event_id": "E26",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.08,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E27",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": "deliver",
+          "jev_probability": 0.54,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E28",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.25,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E29",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.58,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E30",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.2,
+          "advice_correct": false
+        },
+        {
+          "event_id": "E31",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.07,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E32",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.8,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E33",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": "deliver",
+          "jev_probability": 0.5,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E34",
+          "initial_action": "clarify",
+          "action": "clarify",
+          "acceptable_actions": [
+            "clarify"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.3,
+          "advice_correct": false
+        },
+        {
+          "event_id": "E35",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.08,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E36",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": "deliver",
+          "jev_probability": 0.58,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E37",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.5,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E38",
+          "initial_action": "build",
+          "action": "build",
+          "acceptable_actions": [
+            "build"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "build",
+          "jev_probability": 0.25,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E39",
+          "initial_action": "inspect",
+          "action": "inspect",
+          "acceptable_actions": [
+            "inspect"
+          ],
+          "correct": true,
+          "initial_probability": 0.01,
+          "final_probability": 0.01,
+          "jev_action": "inspect",
+          "jev_probability": 0.58,
+          "advice_correct": true
+        },
+        {
+          "event_id": "E40",
+          "initial_action": "deliver",
+          "action": "deliver",
+          "acceptable_actions": [
+            "deliver"
+          ],
+          "correct": true,
+          "initial_probability": 0.99,
+          "final_probability": 0.99,
+          "jev_action": "deliver",
+          "jev_probability": 0.51,
+          "advice_correct": true
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "One authored sequence per arm; no independent replications or significance claim.",
+    "Both agents receive full authoritative state and the same deterministic guards.",
+    "No intentional context compaction, multi-day duration, novel sculpting, or physical manufacturing validation.",
+    "Readiness labels include whether the current request requires inspection or clarification.",
+    "Concurrent execution and Blender queue preclude a fair speed comparison.",
+    "General-agent token usage and total combined cost unavailable.",
+    "File timestamps support ordering but are not tamper-proof attestations."
+  ],
+  "source": {
+    "file": "analysis.json",
+    "sha256": "67d784c0da96827b8f3348c8fabc772b57a5a6689e2c0a9daab239c32ade9c44"
+  }
+}
