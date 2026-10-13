@@ -21,3 +21,17 @@ Fourteen exported HTML documents and 236 local link/asset references checked; te
 Desktop and mobile screenshots inspected. Homepage and all four research studies tested at 320px: no horizontal overflow or broken images.
 Evidence checks cover all 80 agent events, five incorrect recommendations, the E17 recovery case, all 54 geometry cases and splat counts.
 No branch protection is configured on main; current CI and Vercel preview must pass before merge.
+
+## Handshake evidence revision — October 13, 2026
+
+Reviewed the full content/schema/template diff and all new public artifacts.
+No actionable findings remain. Public records use an explicit allowlist of fields;
+private task identities, repository URLs, prompts and solutions are absent.
+Confirmed 17 source records, 85 trials, 7 solves and histogram 13/1/3/0/0/0.
+CSV/JSON row equality, sums, unique IDs, source hashes and exported links are checked in CI.
+
+Validation: lint (0 errors, 8 existing warnings in legacy components), TypeScript,
+production build and static export checks passed. Browser checks: 1280px desktop,
+390px mobile and 320px narrow viewport, no horizontal overflow or broken images.
+Tab reaches the skip link. Both chart images, evidence table and artifact links render.
+Screenshots: docs/media/handshake-desktop.png and handshake-mobile.png.

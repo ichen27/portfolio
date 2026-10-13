@@ -17,7 +17,7 @@ export default function Home() {
         <nav aria-label="On this page"><a href="#work">Research</a><a href="#experience">Experience</a><a href="mailto:ivanzhchen@gmail.com">Email ↗</a></nav>
         <h1>Ivan Chen</h1>
         <p className="lede">Computer science at Syracuse University.</p>
-        <p>I’m interested in how agents make decisions, how geometry can be verified, and how images become 3D representations. These are notes from my experiments: the questions, the methods, and what the results actually show.</p>
+        <p>I’m interested in how agents make decisions, how their behavior can be evaluated, how geometry can be verified, and how images become 3D representations. These are notes from my experiments: the questions, the methods, and what the results actually show.</p>
         <div className="contact"><a href="mailto:ivanzhchen@gmail.com">Email</a><a href="https://github.com/ichen27">GitHub</a><a href="https://www.linkedin.com/in/ivanzhchen/">LinkedIn</a><a href="/resume.pdf">Résumé ↗</a></div>
       </header>
 
@@ -49,6 +49,7 @@ export default function Home() {
             <div className="experience" key={company}>
               <div className="experience-top"><h3>{company}</h3><span className="date">{date}</span></div>
               <p className="role">{role}</p><p>{description}</p>
+              {company === "Handshake AI" && <p className="small-links"><Link href="/work/handshake-benchmarks/">Benchmark methods & results ↗</Link></p>}
               {company === "Cloudflare" && <p className="small-links"><Link href="/work/cloudflare-metrics/">Business metrics ↗</Link><Link href="/work/cloudflare-forecasting/">Forecasting ↗</Link></p>}
             </div>
           ))}
