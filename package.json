@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start -p 3001",
-    "lint": "eslint"
+    "start": "python3 -m http.server 3001 --bind 127.0.0.1 --directory out",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test:export": "node scripts/check-export.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

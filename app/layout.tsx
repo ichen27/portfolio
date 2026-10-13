@@ -1,43 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Ivan Chen — CS & Finance @ Syracuse",
-  description:
-    "Portfolio of Ivan Chen, a Computer Science major and Finance minor at Syracuse University. Building at the intersection of technology and finance.",
-  keywords: [
-    "Ivan Chen",
-    "software engineer",
-    "Syracuse University",
-    "CS",
-    "finance",
-    "portfolio",
-  ],
+  metadataBase: new URL("https://ivanzhchen.com"),
+  title: "Ivan Chen",
+  description: "Computer science at Syracuse. Work on agent systems, CAD and geometry, computer vision, and model evaluation.",
+  openGraph: { title: "Ivan Chen", description: "Selected work, experiments, and engineering notes.", type: "website" },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a>{children}</body></html>;
 }
